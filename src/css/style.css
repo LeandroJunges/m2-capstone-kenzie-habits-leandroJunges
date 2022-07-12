@@ -138,6 +138,13 @@ form{
     border-radius: .25rem;
     background-color: var(--very-very-light-cyan-blue);
 }
+.container-form__input__input:valid{
+    border:.25rem solid var(--green);
+}
+
+.container-form__input__input:invalid{
+    border:.25rem solid var(--red);
+}
 
 .container-form__input__button{
     display: flex;
