@@ -1,14 +1,18 @@
 /* BREAKPOINTS */
+
 /* 20rem */
 /* 30.0625rem */
 /* 48.0625rem */
 /* 62rem */
 /* 67.5rem */
 
+
 body{
     display: flex;
     width: 100%;
+
     /* border: .0625rem solid black; */
+
     
 }
 
@@ -18,7 +22,9 @@ main {
     margin: 0 auto;
     width: 80%;
     height: 80%;
+
     /* border: .0625rem solid black; */
+
 }
 
 .container-login{
@@ -101,7 +107,6 @@ form{
     font-size: 1.25rem;
     line-height: 1.5rem;
     color: var(--blue-cyan-dark);
-
 }
 
 .container-form__user{
@@ -112,7 +117,6 @@ form{
     line-height: 2rem;
     margin-top: 7%;  
     color: var(--blue-cyan);
-
 }
 .container-form__password{
     font-family: 'Inter';
@@ -174,6 +178,7 @@ form{
 }
 
 @media (min-width:30.0625rem){   
+
     .container-text{
        height: 1%;
     }
@@ -190,7 +195,9 @@ form{
     }
 }
 
+
 @media (min-width:48.0625rem){
+
     .container-text__subtitle{
         justify-content: center;
     }
@@ -199,7 +206,9 @@ form{
     }
 }
 
+
 @media (min-width: 62rem){
+
     .container-text{
         justify-items: flex-start;
         align-items: flex-start;
@@ -216,14 +225,18 @@ form{
         width: 50%;
     }
 }
+
 @media (min-width: 67.5rem){
+
     main{
         flex-direction: row;
     
         }
         .container-login{
             height: 90vh;
+
             border-radius: .5rem 0rem 0rem .5rem;
+
         }
     
     .container-text{
@@ -231,25 +244,31 @@ form{
         width: 100vh;
     }
     .container-text__tittle{
+
         margin-top: 2.5%;
         font-size: 1.7529rem;
     }
     .container-text__subtitle{
         margin-top: 5%;
         font-size: 1.5rem;
+
         width: 70%;
     }
     .container-text__message{
         margin-top: 10%;
+
         font-size: 1rem;
+
 
     }
     .container-form{
         height: 90vh;
+
         border-radius: 0rem .5rem .5rem 0rem;
     }
     form{
         margin-top: 6.875rem;
     }
 }
+
 
