@@ -29,8 +29,6 @@ export default class CreateHabit {
       }else{
         alert('Novo hábito criado!')
       }
-      
-      
     })
     .catch(res => console.log(res))
   }

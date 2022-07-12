@@ -31,7 +31,9 @@ export default class ModalCreateHabit {
     const categoryOption = document.createElement('option')
     const categoryOptionLazer = document.createElement('option')
     const categoryOptionTrabalho = document.createElement('option')
-    const categoryOptionSaúde = document.createElement('option')
+    const categoryOptionSaude = document.createElement('option')
+    const categoryOptionEstudos = document.createElement('option')
+    const categoryOptionCasa = document.createElement('option')
     const insertButton = document.createElement('button')
 
     this.main.append(modalBackground)
@@ -49,7 +51,9 @@ export default class ModalCreateHabit {
     categorySelect.append(categoryOption)
     categorySelect.append(categoryOptionLazer)
     categorySelect.append(categoryOptionTrabalho)
-    categorySelect.append(categoryOptionSaúde)
+    categorySelect.append(categoryOptionSaude)
+    categorySelect.append(categoryOptionEstudos)
+    categorySelect.append(categoryOptionCasa)
     formCreateHabit.append(insertButton)
 
     modalTitle.innerText = 'Criar hábito'
@@ -61,7 +65,9 @@ export default class ModalCreateHabit {
     categoryOption.innerText = 'Selecionar categoria'
     categoryOptionLazer.innerText = 'Lazer'
     categoryOptionTrabalho.innerText = 'Trabalho'
-    categoryOptionSaúde.innerText = 'Saude'
+    categoryOptionSaude.innerText = 'Saude'
+    categoryOptionCasa.innerText = 'Casa'
+    categoryOptionEstudos.innerText = 'Estudos'
 
     titleInput.placeholder = 'Digitar título'
     descriptionInput.placeholder = 'Digitar descrição'
