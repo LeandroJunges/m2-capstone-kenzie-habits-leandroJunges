@@ -42,6 +42,26 @@ header{
     height: 2rem;
 }
 
+.dropDown{
+    display: flex;
+    position: absolute;
+    width: 7rem;
+    justify-content: end;
+    top: 48px;
+    left: 81%;
+    flex-direction: column;
+    margin-top: 1rem;
+    border: solid 1px var(--grey-3);
+}
+
+.dropDown>button{
+    border: none;
+    background-color: var(--brand-1);
+    color: white;
+    width: 7rem;
+    height: 2rem;
+}
+
 /* main */
 
 .userinfo{
