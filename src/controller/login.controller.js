@@ -17,10 +17,10 @@ export default class LoginRequest {
           window.alert(res.message);
           window.location.reload(true);
         } else {
-          localStorage.setItem("@habits-kenzie:usr_name", res.urs_name);
-          localStorage.setItem("@habits-kenzie:usr_email", res.urs_email);
-          localStorage.setItem("@habits-kenzie:usr_image", res.urs_image);
-          localStorage.setItem("@habits-kenzie:usr_token", res.urs_token);
+          localStorage.setItem("@habits-kenzie:usr_name", JSON.stringify(res.response.usr_name));
+          localStorage.setItem("@habits-kenzie:usr_email", JSON.stringify(res.response.usr_email));
+          localStorage.setItem("@habits-kenzie:usr_image", JSON.stringify(res.response.usr_image));
+          localStorage.setItem("@habits-kenzie:usr_token", JSON.stringify(res.token));
           window.location.href = "./src/views/homepage.views.html";
         }
       })
