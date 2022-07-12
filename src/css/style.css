@@ -10,10 +10,6 @@
 body{
     display: flex;
     width: 100%;
-
-    /* border: .0625rem solid black; */
-
-    
 }
 
 main {
@@ -22,9 +18,6 @@ main {
     margin: 0 auto;
     width: 80%;
     height: 80%;
-
-    /* border: .0625rem solid black; */
-
 }
 
 .container-login{
@@ -35,7 +28,6 @@ main {
     height: 10%;
     background-color: var(--medium-blue);
     border-radius: .5rem .5rem 0rem 0rem;
-    /* border: .0625rem solid black; */
 }
 
 .container-text{
@@ -53,7 +45,6 @@ main {
     font-size: 1.25rem;
     line-height: 2.625rem;
     color: var(--white);
-    /* border: .0625rem solid black; */
 }
 
 .container-text__subtitle{
@@ -66,7 +57,6 @@ main {
     line-height: 2rem;
     margin-top: 5%; 
     color: var(--white);
-    /* border: .0625rem solid black; */
 }
 
 .container-text__message{
@@ -78,7 +68,6 @@ main {
     font-size: .875rem;
     line-height: 2rem;
     color: var(--blue-light);
-    /* border: .0625rem solid black; */
 }
 
 .container-form{
@@ -88,7 +77,6 @@ main {
     background-color: var(--white) ;
     box-shadow: 0rem .25rem 2.5rem -0.625rem rgba(0, 0, 0, 0.25);
     border-radius: 0rem 0rem .5rem .5rem;
-    border: .0625rem solid black;
 }
 
 form{
@@ -97,7 +85,6 @@ form{
     margin-left: 20%;
     height: 20%;
 }
-
 
 .container-form__text-login{
     margin-top: 10%;
@@ -130,44 +117,34 @@ form{
 
 .container-form__input{
     display: flex;
-    margin-top: .5rem;
-}
-
-.container-form__input__input{
-    display: flex;
     width: 80%;
     height: 2.5rem;
     padding: .5625rem 1.125rem;
     gap: .625rem;
     border-radius: .25rem;
     background-color: var(--very-very-light-cyan-blue);
+    display: flex;
+    margin-top: .5rem;
 }
-.container-form__input__input:valid{
+.container-form__input:valid{
     border:.25rem solid var(--green);
 }
 
-.container-form__input__input:invalid{
+.container-form__input:invalid{
     border:.25rem solid var(--red);
 }
 
-.container-form__input__button{
+.container-form__button{
     display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 2.25rem;
     width: 80%;
     height: 2.5rem;
     padding: .75rem 3.125rem;
     gap: .625rem;
-    background: var(--cold-blue);
-    border: .125rem solid var(--cold-blue);
-    border-radius: .25rem;
-    margin-bottom: 10%;
-}
-
-.container-form__button{
-    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
+    border-radius: .25rem;
     background-color: var(--cold-blue);
     color: var(--white);
     font-family: 'Inter';
@@ -180,7 +157,7 @@ form{
 @media (min-width:30.0625rem){   
 
     .container-text{
-       height: 1%;
+        height: 1%;
     }
     
     .container-text__subtitle{
@@ -195,7 +172,6 @@ form{
     }
 }
 
-
 @media (min-width:48.0625rem){
 
     .container-text__subtitle{
@@ -206,7 +182,6 @@ form{
     }
 }
 
-
 @media (min-width: 62rem){
 
     .container-text{
@@ -216,7 +191,7 @@ form{
         width: 70%;
     }
     .container-text__subtitle{
-       justify-content: flex-start;
+        justify-content: flex-start;
     }
     .container-login{
         width: 50%;
@@ -230,14 +205,11 @@ form{
 
     main{
         flex-direction: row;
-    
         }
         .container-login{
             height: 90vh;
-
             border-radius: .5rem 0rem 0rem .5rem;
-
-        }
+    }
     
     .container-text{
         height: 80vh;
@@ -251,19 +223,14 @@ form{
     .container-text__subtitle{
         margin-top: 5%;
         font-size: 1.5rem;
-
-        width: 70%;
+        width: 53%;
     }
     .container-text__message{
         margin-top: 10%;
-
         font-size: 1rem;
-
-
     }
     .container-form{
         height: 90vh;
-
         border-radius: 0rem .5rem .5rem 0rem;
     }
     form{
