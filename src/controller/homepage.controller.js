@@ -58,18 +58,6 @@ export default class ComponentsDom {
     sectionUserInfo.append(figure, userName)
   }
 
-  static async habitRequest() {
-    await fetch(this.base_url, {
-      method: 'GET',
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${JSON.parse(this.token)}`
-      },
-    })
-    .then(res => res.json())
-    .then(res => res)
-    .catch(err => console.log(err))
-  }
 
   static async main() {
     // busca os dados na API chamando GetAllRequest.getAll
@@ -81,7 +69,7 @@ export default class ComponentsDom {
     // botão Carregar Mais deve renderizar os hábitos de todas as páginas da API
     // botão ... deve ter escutador para abrir o Modal "Editar Hábito"
     // checkbox deve alterar o hábito para concluído. Deve ter um escutador para chamar a classe UpdateHabit.update()
-    const habits = await this.habitRequest()
+    const habits = await GetAllRequest.getAll()
     const cardHabits = document.querySelector('.main__data')
 
     habits.forEach(element => {
