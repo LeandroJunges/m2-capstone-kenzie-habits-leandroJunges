@@ -74,32 +74,54 @@ export default class ComponentsDom {
     const habits = await GetAllRequest.getAll()
     const cardHabits = document.querySelector('.main__data')
     console.log(habits)
+    const buttonMoreUpdate = document.querySelector('.button__loadMore')
+    
 
-    const habt = [
-      {
-        "habit_id": 10,
-        "habit_title": "bater ponto corretamente",
-        "habit_description": "bater ponto todos os dias nos horários corretos",
-        "habit_category": "trabalho",
-        "habit_status": false
-      },
-      {
-        "habit_id": 11,
-        "habit_title": "Estudar 4 horas por dia",
-        "habit_description": "focar nos estudos durante no mínimo 4 horas por dia",
-        "habit_category": "trabalho",
-        "habit_status": false
-      },
-      {
-        "habit_id": 12,
-        "habit_title": "Jogar vôlei aos domingos",
-        "habit_description": "Jogar vôlei todo domingo",
-        "habit_category": "lazer",
-        "habit_status": false
+    habits.forEach((element, index) => {
+      if(index <= 7){
+      const card = document.createElement('li')
+      const check = document.createElement('div')
+      const title = document.createElement('p')
+      const description = document.createElement('p')
+      const category = document.createElement('p')
+      const edit = document.createElement('img')
+      const status = element.habit_status
+      const id = element.habit_id
+
+      check.addEventListener('click', (event) => {
+        if(check.className === 'main__dataCheck' && card.className === ''){
+          card.className = 'main__datali'
+        check.className = 'main__dataliCheck'
+        }else{
+          check.className = 'main__dataCheck'
+          card.className = ''
       }
-    ]
+      })
 
-    habits.forEach(element => {
+      if(status === true){
+        card.className = 'main__datali'
+        check.className = 'main__dataliCheck'
+      } else if(status === false) {
+        check.className = 'main__dataCheck'
+      }
+      title.className = 'main__dataTitle'
+      description.className = 'main__dataDescription'
+      category.className = 'main__dataCategory'
+      edit.className = 'main__dataEdit'
+
+      title.innerText = `${element.habit_title}`
+      description.innerText = `${element.habit_description}`
+      category.innerText = `${element.habit_category}`
+      edit.src = "../assets/img/Group 39.png"
+
+      card.append(check, title, description, category, edit)
+      cardHabits.appendChild(card)
+    }
+    });
+
+    buttonMoreUpdate.addEventListener('click', (event) =>{
+
+    habits.forEach((element, index) => {
       const card = document.createElement('li')
       const check = document.createElement('div')
       const title = document.createElement('p')
@@ -138,6 +160,8 @@ export default class ComponentsDom {
       card.append(check, title, description, category, edit)
       cardHabits.appendChild(card)
     });
+    })
+
   }
 }
 
