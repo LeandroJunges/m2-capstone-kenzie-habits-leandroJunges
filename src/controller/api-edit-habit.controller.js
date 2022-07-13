@@ -19,7 +19,7 @@ export default class EditHabit {
       body: JSON.stringify(data)
     })
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then(() => document.location.reload())
     .catch(err => console.log(err));
   }
 }

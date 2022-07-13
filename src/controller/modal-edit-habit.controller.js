@@ -19,11 +19,6 @@ export default class ModalEditHabit {
     link.href = '../css/modal-edit-habit.css'
     link.type = 'text.css' 
 
-    const title = document.querySelector('.main__dataTitle')
-    const description = document.querySelector('.main__dataDescription')
-    const category = document.querySelector('.main__dataCategory')
-    //console.log(category.innerText)
-
     const modalBackground = document.createElement('div')
     const divModalEditHabit = document.createElement('div')
     const divModalEditHabitHeader = document.createElement('div')

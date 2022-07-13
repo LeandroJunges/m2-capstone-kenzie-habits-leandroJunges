@@ -27,6 +27,7 @@ export default class CreateHabit {
       if(res.message === "categorias aceitas: saude, estudos, casa, trabalho e lazer"){
         alert('Selecionar categoria')
       } else{
+        document.location.reload()
         alert('Novo hábito criado!')
       }
     })
