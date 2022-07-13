@@ -91,6 +91,11 @@ body{
     border-radius: 4px;
     cursor: pointer;
 }
+#cancel:hover{
+    background-color: #b8d9f6;
+    border: 2px solid #b8d9f6;
+
+}
 #confirm{
     width:13rem ;
     color: rgba(255, 255, 255, 1);
@@ -99,4 +104,9 @@ body{
     border: 2px solid #E64445;
     border-radius: 4px;  
     cursor: pointer;       
+}
+#confirm:hover{
+    background-color: #ef8585;
+    border: 2px solid #ef8585;
+
 }
