@@ -11,7 +11,8 @@ ComponentsDom.userInfo();
 ComponentsDom.main();
 ModalCreateHabit.render();
 ModalUserMenu.render();
-//ModalEditHabit.render();
-ModalDeleteHabit.render();
-ModalEditProfile.render
+ModalEditProfile.render()
+// ModalEditHabit.render();
+// ModalDeleteHabit.render();
+
 

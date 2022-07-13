@@ -4,10 +4,6 @@ import UpdateHabit from "./api-uptade-habit.controller.js";
 import ModalEditProfile from "./modal-edit-profile.controller.js";
 import EditHabit from "./api-edit-habit.controller.js";
 import LoginRequest from "./login.controller.js";
-
-import ModalEditProfile from "./modal-edit-profile.controller.js";
-
-
 import ModalCreateHabit from "./modal-create-habit.controller.js";
 
 import DeleteHabit from "./api-delete-habit.controller.js";
@@ -57,7 +53,7 @@ export default class ComponentsDom {
     imgUserInfo.className = 'userinfo__Avatar'
     userName.className = 'userinfo__userName'
     // imgUserInfo.alt = 'Avatar User'
-    const nome = localStorage.getItem('@habits-kenzie:usr_name')
+    // const nome = localStorage.getItem('@habits-kenzie:usr_name')
     const img = localStorage.getItem('@habits-kenzie:usr_image')
 
     userName.innerText = `${JSON.parse(localStorage.getItem('@habits-kenzie:usr_name'))}`

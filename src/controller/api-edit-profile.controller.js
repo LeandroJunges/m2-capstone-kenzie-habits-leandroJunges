@@ -2,35 +2,96 @@
 export default class EditProfile {
 
   static baseURL = "https://habits-kenzie.herokuapp.com/api/user/profile"
-   static token = JSON.parse(localStorage.getItem("@habits-kenzie:usr_token"));
+  static token = localStorage.getItem("@habits-kenzie:usr_token")
 
-
-  static async update() {
-    const btnUpdate = document.querySelector("#btnsend") 
+  static async updateImage() {
     const getUrl = document.querySelector("#cImg")
-    btnUpdate.addEventListener("click", ()=>{
+    
+    const data = {
+      usr_image: getUrl.value
+    }
+    const updteImg = await fetch(this.baseURL, {
       
-      return getUrl.value
-    })
-
-    return await fetch(this.baseURL, {
-     
       method: "PATCH",
       headers:{
-
+        
         "Content-Type" :  "application/json",
-
+        
         "Authorization" :   `Bearer ${JSON.parse(this.token)}`
       },
-      body: {
-        "usr_image": JSON.stringify(getUrl.value)
-  
-      }
-
+      body: JSON.stringify(data)
     })
     .then(res =>  res.json() )
-    .then(res => res)
-    .catch(err => console.log(err))
+    .then(res =>{ 
+      localStorage.setItem("@habits-kenzie:usr_image", JSON.stringify(data.usr_image))
+      window.location.reload(true)
+      return res})
+      .catch(err => console.log(err))
+      
+      return updteImg
+    }
     
+    static async updateName(){
+      
+      const nameInput = document.querySelector("#cName")
+      
+      const dataName = {
+        
+        usr_name : nameInput.value
+      }
+      
+      const nameUpdate = await fetch(this.baseURL, {
+        method: "PATCH",
+        headers:{
+          
+          "Content-Type" :  "application/json",
+          
+          "Authorization" :   `Bearer ${JSON.parse(this.token)}`
+        },
+        body: JSON.stringify(dataName)
+      })
+      .then(res => res.json())
+      .then(res =>{
+        
+        localStorage.setItem("@habits-kenzie:usr_name", JSON.stringify(dataName.usr_name))
+        window.location.reload(true)
+        return res
+      })
+      .catch(err => console.log(err))
+      return nameUpdate
   }
+  static async updateAll(){
+    const nameInput = document.querySelector("#cName")
+    const getUrl = document.querySelector("#cImg")
+
+      
+    const data = {
+
+      usr_image: getUrl.value,
+      
+      usr_name : nameInput.value
+    }
+    
+    const allUpdate = await fetch(this.baseURL, {
+      method: "PATCH",
+      headers:{
+        
+        "Content-Type" :  "application/json",
+        
+        "Authorization" :   `Bearer ${JSON.parse(this.token)}`
+      },
+      body: JSON.stringify(dataName)
+    })
+    .then(res => res.json())
+    .then(res =>{
+      
+      localStorage.setItem("@habits-kenzie:usr_image", JSON.stringify(data.usr_image))
+      localStorage.setItem("@habits-kenzie:usr_name", JSON.stringify(data.usr_name))
+      window.location.reload(true)
+      return res
+    })
+    .catch(err => console.log(err))
+    return allUpdate
+  }
+
 }
