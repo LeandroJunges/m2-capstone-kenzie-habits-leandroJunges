@@ -27,4 +27,4 @@ export default class ComponentsDom {
   }
 }
 
-ModalCreateHabit.render()
+// ModalCreateHabit.render()
