@@ -1,8 +1,14 @@
 import GetAllRequest from "./api-get-all.controller.js";
+import UpdateHabit from "./api-uptade-habit.controller.js";
+import ModalEditProfile from "./modal-edit-profile.controller.js";
 import EditHabit from "./api-edit-habit.controller.js";
 import LoginRequest from "./login.controller.js";
 import ModalCreateHabit from "./modal-create-habit.controller.js";
+
+import DeleteHabit from "./api-delete-habit.controller.js";
+
 import ModalEditHabit from "./modal-edit-habit.controller.js"
+
 
 export default class ComponentsDom {
 
@@ -124,6 +130,12 @@ export default class ComponentsDom {
     }
     });
 
+
+
+
+
+
+
     buttonMoreUpdate.addEventListener('click', (event) =>{
 
     habits.forEach((element, index) => {
@@ -169,3 +181,4 @@ export default class ComponentsDom {
 
   }
 }
+
