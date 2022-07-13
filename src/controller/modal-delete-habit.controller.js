@@ -1,4 +1,4 @@
-import DeleteHabit from "./api-delete-habit.controller"
+import DeleteHabit from "./api-delete-habit.controller.js"
 
 export default class ModalDeleteHabit {
   static body = document.querySelector("body")
