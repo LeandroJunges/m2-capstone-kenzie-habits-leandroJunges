@@ -6,6 +6,7 @@ import ModalCreateHabit from "../controller/modal-create-habit.controller.js";
 import ModalDeleteHabit from "../controller/modal-delete-habit.controller.js";
 import GetAllRequest from "../controller/api-get-all.controller.js"
 
+console.log()
 ComponentsDom.header1();
 ComponentsDom.userInfo();
 await ComponentsDom.main();
@@ -13,4 +14,12 @@ ModalCreateHabit.render();
 ModalUserMenu.render();
 ModalEditHabit.render();
 ModalDeleteHabit.render();
-console.log(await GetAllRequest.getAll())
+
+await ComponentsDom.habitRequest()
+
+
+
+
+
+
+
