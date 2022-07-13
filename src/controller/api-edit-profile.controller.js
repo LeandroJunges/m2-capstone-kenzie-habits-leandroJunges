@@ -2,7 +2,8 @@
 export default class EditProfile {
 
   static baseURL = "https://habits-kenzie.herokuapp.com/api/user/profile"
-  static token =  localStorage.getItem("@habits-kenzie:usr_token")
+   static token = JSON.parse(localStorage.getItem("@habits-kenzie:usr_token"));
+
 
   static async update() {
     const btnUpdate = document.querySelector("#btnsend") 
