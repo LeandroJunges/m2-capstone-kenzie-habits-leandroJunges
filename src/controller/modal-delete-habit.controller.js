@@ -2,6 +2,7 @@ import DeleteHabit from "./api-delete-habit.controller"
 
 export default class ModalDeleteHabit {
   static body = document.querySelector("body")
+  static head = document.querySelector("head")
   
   static render() {
     // renderiza na tela o aviso de que vai deletar o hábito
@@ -12,7 +13,7 @@ export default class ModalDeleteHabit {
       const link    = document.createElement("link")
       link.rel ="stylesheet"
       link.href = "../css/modal-delete-habit.css"
-
+      this.head.appendChild(link)
 
       const containerMain    = document.createElement("div")
       containerMain.classList.add("container")
