@@ -5,20 +5,12 @@ import ModalEditProfile from "../controller/modal-edit-profile.controller.js";
 import ModalCreateHabit from "../controller/modal-create-habit.controller.js";
 import ModalDeleteHabit from "../controller/modal-delete-habit.controller.js";
 
-console.log()
 ComponentsDom.header1();
 ComponentsDom.userInfo();
-await ComponentsDom.main();
+ComponentsDom.main();
 ModalCreateHabit.render();
 ModalUserMenu.render();
-ModalEditHabit.render();
+//ModalEditHabit.render();
 ModalDeleteHabit.render();
 
-await ComponentsDom.habitRequest()
-
-
-
-
-
-
-
+//await ComponentsDom.habitRequest()
