@@ -45,21 +45,40 @@ header{
 .dropDown{
     display: none;
     position: absolute;
-    width: 7rem;
-    justify-content: end;
-    top: 140px;
-    left: 5%;
+    width: 13rem;
+    height: 7rem;
+    /* justify-content: end; */
+    top: 53px;
+    left: 10%;
     flex-direction: column;
     margin-top: 1rem;
     border: solid 1px var(--grey-3);
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--grey-6);
+}
+
+.userinfo__container{
+    width: 86px;
+    height: 71px;
+    position: absolute;
+}
+
+.userinfo__container:hover .dropDown{
+    display: flex;
 }
 
 .dropDown>button{
     border: none;
-    background-color: var(--brand-1);
-    color: white;
-    width: 7rem;
+    background-color: var(--grey-6);
+    color: var(--grey-2);
+    width: 9rem;
     height: 2rem;
+}
+
+.dropDown__editar>img{
+    margin-right: 20px;
 }
 
 /* main */
@@ -188,7 +207,11 @@ header{
     background-color: var(--grey-4);
 }
 
-.main__datali>div{
+.main__dataTitle{
+    margin-left: 10rem;
+}
+
+.main__dataliCheck{
     background-color: #56CF8E;
     background-image: url(../assets/img/check.png);
     background-repeat: no-repeat;
@@ -196,6 +219,10 @@ header{
     justify-content: center;
     align-items: center;
     background-size: 16px;
+    border: solid 1px var(--grey-3);
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.4rem;
 }
 
 .main__dataCheck{
@@ -207,9 +234,8 @@ header{
 
 .main__data>li{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    width: 92%;
     padding: 0 0.8rem;
     height: 3rem;
     border-bottom: solid 1px var(--grey-3);
@@ -272,6 +298,7 @@ header{
     .main__titleContent{
         height: 3rem;
         align-items: center;
+        justify-content: flex-start;
     }
 
     .main__contentList{
@@ -282,34 +309,36 @@ header{
     }
 
     .main__titleTitle{
-        margin-left: -9rem;
+        margin-left: 2%;
     }
 
     .main__titleDescription{
         display: block;
-        margin-left: -4rem;
+        margin-left: 20%;
     }
 
     .main__titleTitleCategory{
         display: block;
-        margin-left: -2rem;
+        margin-left: 35%;
+    }
+
+    .main__titleEdit{
+        margin-left: 6%;
     }
 
     .main__data>li{
-        width: 96%;
+        width: 100%;
     }
 
-    /* .main__data>li>p{
-        width: 30%;
-    } */
-
     .main__dataTitle{
-        margin-left: -8rem;
+        margin-left: 3rem;
+        width: 14%;
     }
 
     .main__dataDescription{
         display: block;
-        margin-left: -5rem;
+        margin-left: 6rem;
+        width: 38%;
     }
 
     .main__dataCategory{
@@ -320,6 +349,11 @@ header{
         align-items: center;
         display: flex;
         justify-content: center;
+        margin-left: 3rem;
+    }
+
+    .main__dataEdit{
+        margin-left: 4rem;
     }
 
     .div__loadMore{

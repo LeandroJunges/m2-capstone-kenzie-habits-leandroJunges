@@ -28,7 +28,7 @@ export default class ComponentsDom {
     // renderiza o header2 e mostra a imagem que está arquivada no localStorage
     // a imagem deve term um "escutador" para que, ao ser clicada, possa abrir o modal "menu do usuário"
     const sectionUserInfo = document.querySelector('.userinfo')
-    const figure = document.createElement('figure')
+    const figure = document.querySelector('.userinfo__figure')
     const imgUserInfo = document.createElement('img')
     const userName = document.createElement('h2')
     const dropDown = document.querySelector('.dropDown')
@@ -106,8 +106,25 @@ export default class ComponentsDom {
       const description = document.createElement('p')
       const category = document.createElement('p')
       const edit = document.createElement('img')
+      const status = element.habit_status
+      const id = element.habit_id
 
-      check.className = 'main__dataCheck'
+      check.addEventListener('click', (event) => {
+        if(check.className === 'main__dataCheck' && card.className === ''){
+          card.className = 'main__datali'
+        check.className = 'main__dataliCheck'
+        }else{
+          check.className = 'main__dataCheck'
+          card.className = ''
+      }
+      })
+
+      if(status === true){
+        card.className = 'main__datali'
+        check.className = 'main__dataliCheck'
+      } else if(status === false) {
+        check.className = 'main__dataCheck'
+      }
       title.className = 'main__dataTitle'
       description.className = 'main__dataDescription'
       category.className = 'main__dataCategory'
