@@ -5,20 +5,15 @@ export default class ModalEditProfile {
   static body = document.querySelector("body")
   static btnEdit = document.querySelector(".dropDown__editar")
 
-  static teste(){
-
-  }
-
-  static render() {
-    // renderiza Modal Editar Perfil
+   static render() {
     
-   
-
-    this.btnEdit.addEventListener("click", ()=>{
+        this.btnEdit.addEventListener("click", ()=>{
         const link            = document.createElement("link")
         link.rel  = "stylesheet"  
         link.href = "../css/modal-edit-profile.css"
+
         this.head.appendChild(link)
+        
         const generalContainer = document.createElement("div")
         generalContainer.classList.add("container")
         const form            = document.createElement("form")
@@ -65,7 +60,7 @@ export default class ModalEditProfile {
           this.body.removeChild(generalContainer)
         })
         buttonSave.addEventListener("click", ()=>{
-          EditProfile.update()
+            EditProfile.update()
         })
     })
 

@@ -20,13 +20,6 @@ ModalEditProfile.render
 
 
 
-// testes
 
-import EditProfile from "../controller/api-edit-profile.controller.js"
-let img = {
-    usr_image: "https://sm.ign.com/ign_br/screenshot/default/1f356a16-4821-4e31-9578-189d51793065-mandalorian-babyyoda-si_w98z.jpg"
-}
-
-EditProfile.update(img)
 
 
