@@ -1,5 +1,5 @@
 import GetAllRequest from "./api-get-all.controller.js";
-import UpdateHabit from "./api-uptade-habit.controller.js";
+import EditHabit from "./api-edit-habit.controller.js";
 import LoginRequest from "./login.controller.js";
 
 import ModalEditProfile from "./modal-edit-profile.controller.js";
