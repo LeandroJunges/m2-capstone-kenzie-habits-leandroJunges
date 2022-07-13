@@ -1,6 +1,8 @@
 import GetAllRequest from "./api-get-all.controller.js";
 import UpdateHabit from "./api-uptade-habit.controller.js";
 import LoginRequest from "./login.controller.js";
+import ModalCreateHabit from "./modal-create-habit.controller.js";
+
 
 export default class ComponentsDom {
 
@@ -96,3 +98,5 @@ export default class ComponentsDom {
     });
   }
 }
+
+// ModalCreateHabit.render()

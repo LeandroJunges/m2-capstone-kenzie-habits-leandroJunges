@@ -1,17 +1,36 @@
 export default class GetAllRequest {
 
-  static base_url = 'https://habits-kenzie.herokuapp.com/api/habits'
-
+  static baseUrl = "https://habits-kenzie.herokuapp.com/api/habits";
+  static token = JSON.parse(localStorage.getItem("@habits-kenzie:usr_token"));
+  
   static async getAll() {
-    await fetch(this.base_url, {
-      method: 'GET',
+    const response = await fetch(this.baseUrl, {
+      method: "GET",
       headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${JSON.parse(this.token)}`
-      },
+        Authorization: `Bearer ${this.token}`
+      }
     })
     .then(res => res.json())
-    .then(res => res)
     .catch(err => console.log(err))
+
+    return response;
+  }
+
+  static async getByID(idHabit) {
+    const response = await fetch(this.baseUrl, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${this.token}`
+      }
+    })
+    .then(res => res.json())
+    .then((res) => {
+      const habitSelected = res.filter(element => element.habit_id == idHabit);
+      return habitSelected[0];
+    })
+    .catch(err => console.log(err))
+
+    return response;
+
   }
 }
