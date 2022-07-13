@@ -1,8 +1,9 @@
+import EditProfile from "./api-edit-profile.controller.js"
+
 export default class ModalEditProfile {
   static head = document.querySelector("head")
   static body = document.querySelector("body")
   static btnEdit = document.querySelector(".dropDown__editar")
-  static main = document.querySelector("main")
 
   static teste(){
 
@@ -52,7 +53,7 @@ export default class ModalEditProfile {
         const buttonSave      = document.createElement("button")
         buttonSave.id         = "btnsend"
         buttonSave.innerText  = "Salvar Alterações"
-        
+        buttonSave.type = "button"
         divButton.appendChild(buttonSave)
         divContent.append(labelName, inputName, labelImg, inputImg)
         divHeader.append(h1, buttonClose)
@@ -62,6 +63,9 @@ export default class ModalEditProfile {
 
         buttonClose.addEventListener("click", ()=>{
           this.body.removeChild(generalContainer)
+        })
+        buttonSave.addEventListener("click", ()=>{
+          EditProfile.update()
         })
     })
 

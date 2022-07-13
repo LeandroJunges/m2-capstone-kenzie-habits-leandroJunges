@@ -1,28 +1,25 @@
+
 export default class EditProfile {
+
   static baseURL = "https://habits-kenzie.herokuapp.com/api/user/profile"
   static token =  localStorage.getItem("@habits-kenzie:usr_token")
 
   static async update() {
     const btnUpdate = document.querySelector("#btnsend") 
     const getUrl = document.querySelector("#cImg")
-
-    const eventBtn = btnUpdate.addEventListener("click", (e)=>{
+    btnUpdate.addEventListener("click", ()=>{
       
-      e.preventDefault()
-
       return getUrl.value
     })
 
-  
-
     return await fetch(this.baseURL, {
-
+     
       method: "PATCH",
       headers:{
 
         "Content-Type" :  "application/json",
 
-        "Authorization" :   `Bearer ${this.token}`
+        "Authorization" :   `Bearer ${JSON.parse(this.token)}`
       },
       body: {
         "usr_image": JSON.stringify(getUrl.value)
@@ -30,10 +27,9 @@ export default class EditProfile {
       }
 
     })
-    .then(res => {
-       return res.json() })
+    .then(res =>  res.json() )
+    .then(res => res)
     .catch(err => console.log(err))
     
   }
 }
-EditProfile.update()

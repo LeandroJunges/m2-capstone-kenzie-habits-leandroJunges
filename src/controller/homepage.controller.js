@@ -1,6 +1,10 @@
 import GetAllRequest from "./api-get-all.controller.js";
 import UpdateHabit from "./api-uptade-habit.controller.js";
+
 import ModalEditProfile from "./modal-edit-profile.controller.js";
+
+
+import ModalCreateHabit from "./modal-create-habit.controller.js";
 
 
 export default class ComponentsDom {
@@ -27,5 +31,9 @@ export default class ComponentsDom {
     // checkbox deve alterar o hábito para concluído. Deve ter um escutador para chamar a classe UpdateHabit.update()
   }
 }
-ModalEditProfile.render()
-console.log("oi")
+
+
+
+
+
+
