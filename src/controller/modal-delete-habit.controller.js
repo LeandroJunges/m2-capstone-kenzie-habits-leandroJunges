@@ -16,16 +16,15 @@ export default class ModalDeleteHabit {
 
       const containerMain    = document.createElement("div")
       containerMain.classList.add("container")
-
+      
       const containerBox     = document.createElement("div")
       containerBox.classList.add("container__box")
-
       const containerHeader        = document.createElement("div")
       containerHeader.classList.add("container__header")
-
+      
       const titleHeader            = document.createElement("h2")
       titleHeader.innerText        = "Excluir hábito"
-
+      
       const btnCloseDel            = document.createElement("button")
       btnCloseDel.id               = "btnCloseDelete"
       btnCloseDel.innerText        = "X"
@@ -35,21 +34,29 @@ export default class ModalDeleteHabit {
 
       const titleContent           = document.createElement("h2")
       titleContent.innerText       = "Certeza que deseja excluir esse habito?"
-
+      
       const paragraphContent       = document.createElement("p")
       paragraphContent.innerText   = "Após executar essa ação não será possível desfazer"
-
+      
       const containerButtons       = document.createElement("div")
       containerButtons.classList.add("container__buttons")
-
+      
       const btnCancel              = document.createElement("button")
       btnCancel.id                 = "cancel"
       btnCancel.innerText          = "Cancelar"
-
+      
       const btnConfirm             = document.createElement("div")
       btnConfirm.id                = "confirm"
       btnConfirm.innerText         = "Sim, excluir esse hábito"
-
+      
+      
+      containerButtons.append(btnCancel, btnConfirm)
+      containerContent.append(titleContent, paragraphContent)
+      containerHeader.append(titleHeader, btnCloseDel)
+      containerBox.append(containerHeader, containerContent, containerButtons)
+      containerMain.append(containerBox)
+      this.body.append(containerMain)
+      
       btnConfirm.addEventListener("click", ()=>{
            DeleteHabit.delete()
       } )
