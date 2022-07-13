@@ -21,11 +21,6 @@ export default class ModalEditHabit {
     link.href = '../css/modal-edit-habit.css'
     link.type = 'text.css' 
 
-    const title = document.querySelector('.main__dataTitle')
-    const description = document.querySelector('.main__dataDescription')
-    const category = document.querySelector('.main__dataCategory')
-    //console.log(category.innerText)
-
     const modalBackground = document.createElement('div')
     const divModalEditHabit = document.createElement('div')
     const divModalEditHabitHeader = document.createElement('div')
@@ -93,8 +88,6 @@ export default class ModalEditHabit {
 
     labelStatus.innerText = 'Status'
     inputStatus.type = 'checkbox'
-    inputStatus.name = 'checked'
-    inputStatus.value = 'true'
 
     titleInput.type = 'text'
     descriptionInput.type = 'text'
@@ -129,7 +122,15 @@ export default class ModalEditHabit {
         // DeleteHabit.delete(habitId)
     })
     insertButton.addEventListener('click', () => {
-      EditHabit.update(habitId, titleInput.value, descriptionInput.value, categorySelect.value, )
+      if(inputStatus.checked){
+        console.log(inputStatus.checked)
+        EditHabit.check(habitId)
+        EditHabit.update(habitId, titleInput.value, descriptionInput.value, categorySelect.value, )
+      }
+      else{
+        EditHabit.update(habitId, titleInput.value, descriptionInput.value, categorySelect.value, )
+      }
+      
     })
 
     closeButton.addEventListener('click', () => this.main.removeChild(modalBackground))
