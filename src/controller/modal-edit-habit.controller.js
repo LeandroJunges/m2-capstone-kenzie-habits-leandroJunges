@@ -1,6 +1,8 @@
 import CreateHabit from "./api-create-habit.controller.js";
 import GetAllRequest from "./api-get-all.controller.js";
 import EditHabit from "./api-edit-habit.controller.js";
+import DeleteHabit from "./api-delete-habit.controller.js";
+import ModalDeleteHabit from "./modal-delete-habit.controller.js";
 
 //buttonEditHabit.addEventListener('click', () => console.log('a'))
 
@@ -113,6 +115,12 @@ export default class ModalEditHabit {
     insertButton.classList.add('modalContent__modalFormCreateHabit--insertButton')
     deleteButton.classList.add('modalContent__modalFormCreateHabit--deleteButton')
 
+    deleteButton.addEventListener("click",()=>{
+      this.main.removeChild(modalBackground)
+        ModalDeleteHabit.render(habitId)
+       
+        // DeleteHabit.delete(habitId)
+    })
     insertButton.addEventListener('click', () => {
       if(inputStatus.checked){
         console.log(inputStatus.checked)

@@ -1,13 +1,13 @@
-
+/* reset */
 body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    height: 100vh;
+    height: 100%;
 }
 /* cor do hover no botão rgba(160, 173, 249, 1) */
 .container{
-    height: 100vh;
+    height: 122vh;
     width: 100%;
     position: absolute;
     top: 0;
