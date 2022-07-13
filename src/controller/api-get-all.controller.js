@@ -1,3 +1,5 @@
+import ModalEditHabit from "./modal-edit-habit.controller.js"
+
 export default class GetAllRequest {
 
   static baseUrl = "https://habits-kenzie.herokuapp.com/api/habits";
@@ -25,9 +27,10 @@ export default class GetAllRequest {
     })
     .then(res => res.json())
     .then((res) => {
-      const habitSelected = res.filter(element => element.habit_id == idHabit);
-      return habitSelected[0];
+      const habitSelected = res.find(element => element.habit_id == idHabit);
+      return habitSelected
     })
+    
     .catch(err => console.log(err))
 
     return response;
