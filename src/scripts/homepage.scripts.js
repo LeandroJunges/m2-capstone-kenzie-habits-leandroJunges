@@ -12,7 +12,11 @@ ComponentsDom.userInfo();
 ComponentsDom.main();
 ModalCreateHabit.render();
 ModalUserMenu.render();
+<<<<<<< HEAD
 ModalEditHabit.render();
+=======
+// ModalEditHabit.render();
+>>>>>>> 0eb383f1d12d2846bb4236d41a1e087279c384c2
 ModalDeleteHabit.render();
 Filter.allPages();
 
