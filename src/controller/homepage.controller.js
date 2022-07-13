@@ -76,10 +76,20 @@ export default class ComponentsDom {
     // botão Carregar Mais deve renderizar os hábitos de todas as páginas da API
     // botão ... deve ter escutador para abrir o Modal "Editar Hábito"
     // checkbox deve alterar o hábito para concluído. Deve ter um escutador para chamar a classe UpdateHabit.update()
-    const habits = await GetAllRequest.getAll()
+    let habits = []
+    const ha = await GetAllRequest.getAll()
+    habits.push(...ha)
+    console.log(ha)
     const cardHabits = document.querySelector('.main__data')
     console.log(habits)
     const buttonMoreUpdate = document.querySelector('.button__loadMore')
+    const buttonFinish = document.querySelector('.main__filterButtonFinish')
+    buttonFinish.addEventListener('click', () => {
+    const hab =  habits.filter(element => element.habit_status === true)
+    habits = []
+      habits.push(...hab)
+    })
+
     
 
     habits.forEach((element, index) => {
