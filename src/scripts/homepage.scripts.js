@@ -13,6 +13,7 @@ ModalCreateHabit.render();
 ModalUserMenu.render();
 ModalEditHabit.render();
 ModalDeleteHabit.render();
+ModalEditProfile.render
 
 // await ComponentsDom.habitRequest()
 
