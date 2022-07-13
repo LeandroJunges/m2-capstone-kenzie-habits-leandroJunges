@@ -32,6 +32,7 @@ export default class EditHabit {
       }
     })
     .then(res => res.json())
+    .then(res => console.log(res))
     .catch(err => console.log(err))
   }
 }

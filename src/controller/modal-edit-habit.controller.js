@@ -113,10 +113,10 @@ export default class ModalEditHabit {
     insertButton.classList.add('modalContent__modalFormCreateHabit--insertButton')
     deleteButton.classList.add('modalContent__modalFormCreateHabit--deleteButton')
 
-    insertButton.addEventListener('click', () => {      
-      //console.log(inputStatus.checked)
+    insertButton.addEventListener('click', () => {
       if(inputStatus.checked){
         console.log(inputStatus.checked)
+        EditHabit.check(habitId)
         EditHabit.update(habitId, titleInput.value, descriptionInput.value, categorySelect.value, )
       }
       else{
