@@ -78,9 +78,9 @@ export default class ComponentsDom {
     // checkbox deve alterar o hábito para concluído. Deve ter um escutador para chamar a classe UpdateHabit.update()
     const habits = await GetAllRequest.getAll()
     const cardHabits = document.querySelector('.main__data')
-    console.log(habits)
     const buttonMoreUpdate = document.querySelector('.button__loadMore')
-    
+    const divLoadMore = document.querySelector('.div__loadMore')
+    let counter = 7
 
     habits.forEach((element, index) => {
       if(index <= 7){
@@ -137,6 +137,10 @@ export default class ComponentsDom {
 
 
     buttonMoreUpdate.addEventListener('click', (event) =>{
+      console.log(habits)
+      while(cardHabits.firstChild){
+        cardHabits.removeChild(cardHabits.firstChild)
+      }
 
     habits.forEach((element, index) => {
       const card = document.createElement('li')
@@ -146,7 +150,6 @@ export default class ComponentsDom {
       const category = document.createElement('p')
       const edit = document.createElement('img')
       const status = element.habit_status
-      const id = element.habit_id
 
       check.addEventListener('click', (event) => {
         if(check.className === 'main__dataCheck' && card.className === ''){
@@ -176,6 +179,7 @@ export default class ComponentsDom {
 
       card.append(check, title, description, category, edit)
       cardHabits.appendChild(card)
+      
     });
     })
 

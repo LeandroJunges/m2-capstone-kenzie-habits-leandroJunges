@@ -86,8 +86,6 @@ export default class ModalEditHabit {
 
     labelStatus.innerText = 'Status'
     inputStatus.type = 'checkbox'
-    inputStatus.name = 'checked'
-    inputStatus.value = 'true'
 
     titleInput.type = 'text'
     descriptionInput.type = 'text'
@@ -116,7 +114,15 @@ export default class ModalEditHabit {
     deleteButton.classList.add('modalContent__modalFormCreateHabit--deleteButton')
 
     insertButton.addEventListener('click', () => {
-      EditHabit.update(habitId, titleInput.value, descriptionInput.value, categorySelect.value, )
+      if(inputStatus.checked){
+        console.log(inputStatus.checked)
+        EditHabit.check(habitId)
+        EditHabit.update(habitId, titleInput.value, descriptionInput.value, categorySelect.value, )
+      }
+      else{
+        EditHabit.update(habitId, titleInput.value, descriptionInput.value, categorySelect.value, )
+      }
+      
     })
 
     closeButton.addEventListener('click', () => this.main.removeChild(modalBackground))
