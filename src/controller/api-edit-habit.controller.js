@@ -22,4 +22,16 @@ export default class EditHabit {
     .then(() => document.location.reload())
     .catch(err => console.log(err));
   }
+
+  static async check (habitId) {
+    await fetch (`${this.baseUrl}complete/${habitId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${this.token}`
+      }
+    })
+    .then(res => res.json())
+    .catch(err => console.log(err))
+  }
 }
