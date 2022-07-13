@@ -11,6 +11,10 @@ export default class DeleteHabit {
               }
         })
         .then(res => res.json())
+        .then(res => {
+            window.location.reload(true)
+            return res
+        })
         .catch(err => console.log(err))
 
         return result

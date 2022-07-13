@@ -61,20 +61,19 @@ export default class ModalEditProfile {
         })
         buttonSave.addEventListener("click", ()=>{
 
-          if(!inputName && !inputImg){
-
+          if(!inputName.value && !inputImg.value){
             console.log("Erro! Necessário preencher um dos campos! ")
-              
-          } 
-          if(!inputName){
+          }else if(inputName.value && inputImg.value){ 
+            localStorage.removeItem("@habits-kenzie:usr_image")
+            localStorage.removeItem("@habits-kenzie:usr_name")
+            EditProfile.updateAll()
+
+          }else if(inputImg.value){
               localStorage.removeItem("@habits-kenzie:usr_image")
               EditProfile.updateImage()
-          }
-          if(!inputImg){
-              localStorage.removeItem("@habits-kenzie:usr_name")
-              EditProfile.updateName()
           }else{
-            EditProfile.updateAll()
+            localStorage.removeItem("@habits-kenzie:usr_name")
+            EditProfile.updateName()
           }
   
 

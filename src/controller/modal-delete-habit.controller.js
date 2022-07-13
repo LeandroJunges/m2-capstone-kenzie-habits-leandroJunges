@@ -46,7 +46,7 @@ export default class ModalDeleteHabit {
       btnCancel.id                 = "cancel"
       btnCancel.innerText          = "Cancelar"
       
-      const btnConfirm             = document.createElement("div")
+      const btnConfirm             = document.createElement("button")
       btnConfirm.id                = "confirm"
       btnConfirm.innerText         = "Sim, excluir esse hábito"
       
@@ -59,8 +59,9 @@ export default class ModalDeleteHabit {
       this.body.append(containerMain)
       
       btnConfirm.addEventListener("click", ()=>{
+        console.log(id)
            DeleteHabit.delete(id)
-           window.location.reload(true)
+          //  window.location.reload(true)
       } )
 
     }

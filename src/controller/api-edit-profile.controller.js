@@ -23,9 +23,13 @@ export default class EditProfile {
     })
     .then(res =>  res.json() )
     .then(res =>{ 
-      localStorage.setItem("@habits-kenzie:usr_image", JSON.stringify(data.usr_image))
-      window.location.reload(true)
+        localStorage.setItem("@habits-kenzie:usr_image", JSON.stringify(data.usr_image))
+        // document.location.reload(true)
       return res})
+      .then(res => {
+        window.location.reload(true)
+        return res
+      })
       .catch(err => console.log(err))
       
       return updteImg
@@ -54,6 +58,10 @@ export default class EditProfile {
       .then(res =>{
         
         localStorage.setItem("@habits-kenzie:usr_name", JSON.stringify(dataName.usr_name))
+        // window.location.reload(true)
+        return res
+      })
+      .then(res => {
         window.location.reload(true)
         return res
       })
@@ -65,7 +73,7 @@ export default class EditProfile {
     const getUrl = document.querySelector("#cImg")
 
       
-    const data = {
+    const allData = {
 
       usr_image: getUrl.value,
       
@@ -80,18 +88,22 @@ export default class EditProfile {
         
         "Authorization" :   `Bearer ${JSON.parse(this.token)}`
       },
-      body: JSON.stringify(dataName)
+      body: JSON.stringify(allData)
     })
     .then(res => res.json())
     .then(res =>{
-      
-      localStorage.setItem("@habits-kenzie:usr_image", JSON.stringify(data.usr_image))
-      localStorage.setItem("@habits-kenzie:usr_name", JSON.stringify(data.usr_name))
+
+        localStorage.setItem("@habits-kenzie:usr_image", JSON.stringify(allData.usr_image))
+        localStorage.setItem("@habits-kenzie:usr_name", JSON.stringify(allData.usr_name))
+        
+      return res
+    })
+    .then(res => {
       window.location.reload(true)
       return res
     })
     .catch(err => console.log(err))
-    return allUpdate
+     return allUpdate
   }
 
 }
