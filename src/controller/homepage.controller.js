@@ -138,6 +138,8 @@ export default class ComponentsDom {
 
     buttonMoreUpdate.addEventListener('click', (event) =>{
 
+    cardHabits.innerHTML = "";  
+
     habits.forEach((element, index) => {
       const card = document.createElement('li')
       const check = document.createElement('div')
@@ -173,6 +175,13 @@ export default class ComponentsDom {
       description.innerText = `${element.habit_description}`
       category.innerText = `${element.habit_category}`
       edit.src = "../assets/img/Group 39.png"
+
+      edit.id = element.habit_id
+
+      edit.addEventListener('click', () => {
+        ModalEditHabit.render(edit.id)
+      })
+
 
       card.append(check, title, description, category, edit)
       cardHabits.appendChild(card)
