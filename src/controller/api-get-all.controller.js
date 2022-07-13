@@ -1,4 +1,5 @@
 export default class GetAllRequest {
+
   static baseUrl = "https://habits-kenzie.herokuapp.com/api/habits";
   static token = JSON.parse(localStorage.getItem("@habits-kenzie:usr_token"));
   
@@ -30,5 +31,6 @@ export default class GetAllRequest {
     .catch(err => console.log(err))
 
     return response;
+
   }
 }

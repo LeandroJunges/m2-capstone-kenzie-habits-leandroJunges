@@ -43,12 +43,12 @@ header{
 }
 
 .dropDown{
-    display: flex;
+    display: none;
     position: absolute;
     width: 7rem;
     justify-content: end;
-    top: 48px;
-    left: 81%;
+    top: 140px;
+    left: 5%;
     flex-direction: column;
     margin-top: 1rem;
     border: solid 1px var(--grey-3);
