@@ -2,12 +2,14 @@ export default class GetAllRequest {
 
   static base_url = 'https://habits-kenzie.herokuapp.com/api/habits'
 
+  static token = localStorage.getItem('@habits-kenzie:usr_token')
+
   static async getAll() {
-    await fetch(this.base_url, {
+    return await fetch(this.base_url, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
-        authorization: `Bearer ${JSON.parse(this.token)}`
+        "Authorization": `Bearer ${JSON.parse(this.token)}`
       },
     })
     .then(res => res.json())

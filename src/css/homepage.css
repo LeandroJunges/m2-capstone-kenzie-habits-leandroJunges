@@ -184,6 +184,19 @@ header{
     overflow: scroll;
     height: 45vh;
 }
+.main__datali{
+    background-color: var(--grey-4);
+}
+
+.main__datali>div{
+    background-color: #56CF8E;
+    background-image: url(../assets/img/check.png);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 16px;
+}
 
 .main__dataCheck{
     border: solid 1px var(--grey-3);

@@ -71,6 +71,31 @@ export default class ComponentsDom {
     // checkbox deve alterar o hábito para concluído. Deve ter um escutador para chamar a classe UpdateHabit.update()
     const habits = await GetAllRequest.getAll()
     const cardHabits = document.querySelector('.main__data')
+    console.log(habits)
+
+    const habt = [
+      {
+        "habit_id": 10,
+        "habit_title": "bater ponto corretamente",
+        "habit_description": "bater ponto todos os dias nos horários corretos",
+        "habit_category": "trabalho",
+        "habit_status": false
+      },
+      {
+        "habit_id": 11,
+        "habit_title": "Estudar 4 horas por dia",
+        "habit_description": "focar nos estudos durante no mínimo 4 horas por dia",
+        "habit_category": "trabalho",
+        "habit_status": false
+      },
+      {
+        "habit_id": 12,
+        "habit_title": "Jogar vôlei aos domingos",
+        "habit_description": "Jogar vôlei todo domingo",
+        "habit_category": "lazer",
+        "habit_status": false
+      }
+    ]
 
     habits.forEach(element => {
       const card = document.createElement('li')
