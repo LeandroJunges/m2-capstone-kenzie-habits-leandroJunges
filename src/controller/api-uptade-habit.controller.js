@@ -1,3 +1,4 @@
+
 export default class UpdateHabit {
   static base_url = 'https://habits-kenzie.herokuapp.com/api/habits/:habit_id'
   static token = JSON.parse(localStorage.getItem("@habits-kenzie:usr_token"));
