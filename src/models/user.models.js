@@ -1,33 +1,38 @@
 import GetAllRequest from "../controller/api-get-all.controller.js";
-import Filter from "../controller/filter-homepage.controller.js";
-import { arrHabitFilter } from "../controller/filter-homepage.controller.js";
-export default class User {
-  static async finished() {
-    // retorna os hábitos da API filtrando somente os hábitos concluídos
-  }
+import ComponentsDom from '../controller/homepage.controller.js';
 
-  static async allPages() {
+  export default class User {
 
-      let habit = []
-      const allButton = document.querySelector('.main__filterButtonAll')
+    static async getAllHabits() {
+        const response = await GetAllRequest.getAll()
+        return response
+    }
 
-      allButton.addEventListener('click', async () => {
-        const all = await Filter.allFilter()
-        habit = []
-        habit.push(all)
-        console.log("TESTE")
-      })
+    static filterAllHabits() {
+        const button = document.querySelector('.main__filterButtonAll')
+        const habitAll = []
+        const arrUnique = [...new Set(habitAll)];
+        button.addEventListener('click', async () => {
+            const allHabits = await this.getAllHabits()
+            habitAll.push(allHabits)
+            ComponentsDom.main(arrUnique)
+            console.log(button)
+        });
+    }
 
-      const finishButton = document.querySelector('.main__filterButtonFinish')
-    finishButton.addEventListener('click', async () => {  
-      habit = []
-      const complete = await Filter.habitFilterFinish()
-      habit.push(complete)
-    })
-      // console.log(habit)
-      return habit
-  }
+    static filterFinishHabits() {
+        const button = document.querySelector('.main__filterButtonFinish')
+        const habit = []
+        const arrUnique = [...new Set(habit)];
+        button.addEventListener('click', async () => {
+            const allHabits = await this.getAllHabits()
+            const filteredHabits = allHabits.filter(({ habit_status }) => habit_status == true)
+            habit.push(filteredHabits)
+            console.log(habit)
+            
+            ComponentsDom.main(arrUnique)
+        });
+        return button
+    }
 }
-
-
 
