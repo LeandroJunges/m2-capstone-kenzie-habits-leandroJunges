@@ -1,23 +1,28 @@
 import CreateHabit from "./api-create-habit.controller.js";
+import GetAllRequest from "./api-get-all.controller.js";
+import EditHabit from "./api-edit-habit.controller.js";
+
+//buttonEditHabit.addEventListener('click', () => console.log('a'))
 
 export default class ModalEditHabit {
-
-  static filterButtonNew = document.querySelector('.dropDown__Logout');//utilizando botão Logout temporariamente para testes - aguardandno homepage
-
   
   static head = document.querySelector('head')
   static main = document.querySelector('main')
+  static data = {}
 
-  static render() {
-  
-   
-  this.filterButtonNew.addEventListener('click', (event) => {
+  static render(id) {
+    //console.log(id)
+    const habitId = id
     const link = document.createElement('link')
-
     this.head.append(link)
     link.rel = 'stylesheet'
     link.href = '../css/modal-edit-habit.css'
     link.type = 'text.css' 
+
+    const title = document.querySelector('.main__dataTitle')
+    const description = document.querySelector('.main__dataDescription')
+    const category = document.querySelector('.main__dataCategory')
+    //console.log(category.innerText)
 
     const modalBackground = document.createElement('div')
     const divModalEditHabit = document.createElement('div')
@@ -77,7 +82,7 @@ export default class ModalEditHabit {
     categoryOption.innerText = 'Selecionar categoria'
     categoryOptionLazer.innerText = 'Lazer'
     categoryOptionTrabalho.innerText = 'Trabalho'
-    categoryOptionSaude.innerText = 'Saude'
+    categoryOptionSaude.innerText = 'saude'
     categoryOptionCasa.innerText = 'Casa'
     categoryOptionEstudos.innerText = 'Estudos'
 
@@ -106,7 +111,7 @@ export default class ModalEditHabit {
     categoryLabel.classList.add('modalContent__modalFormCreateHabit--modalLabel')
     titleInput.classList.add('modalContent__modalFormCreateHabit--modalInput')
     descriptionInput.classList.add('modalContent__modalFormCreateHabit--modalInput')
-    categorySelect.classList.add('modalContent__modalFormCreateHabit--modalInput')
+    categorySelect.classList.add('modalContent__modalFormCreateHabit--modalSelect')
     categoryOption.classList.add('modalContent__modalFormCreateHabit--option')
     divStatus.classList.add('modalContent__modalDivStatus')
     labelStatus.classList.add('modalContent__modalLabelStatus')
@@ -116,12 +121,12 @@ export default class ModalEditHabit {
     deleteButton.classList.add('modalContent__modalFormCreateHabit--deleteButton')
 
     insertButton.addEventListener('click', () => {
-
-      CreateHabit.create(titleInput.value, descriptionInput.value, categorySelect.value)
+      EditHabit.update(habitId, titleInput.value, descriptionInput.value, categorySelect.value, )
     })
 
     closeButton.addEventListener('click', () => this.main.removeChild(modalBackground))
-    })
+    }
+
   }
-}
+
 

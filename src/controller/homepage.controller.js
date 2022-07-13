@@ -1,7 +1,13 @@
 import GetAllRequest from "./api-get-all.controller.js";
+import UpdateHabit from "./api-uptade-habit.controller.js";
+import ModalEditProfile from "./modal-edit-profile.controller.js";
 import EditHabit from "./api-edit-habit.controller.js";
 import LoginRequest from "./login.controller.js";
 import ModalCreateHabit from "./modal-create-habit.controller.js";
+
+import DeleteHabit from "./api-delete-habit.controller.js";
+
+import ModalEditHabit from "./modal-edit-habit.controller.js"
 
 
 export default class ComponentsDom {
@@ -19,7 +25,6 @@ export default class ComponentsDom {
     headerImg.className = 'header__avatarUser'
     headerImg.alt = 'Avatar User'
     headerImg.src = JSON.parse(img)
-    console.log(img)
     figure.appendChild(headerImg)
     headerUserInfo.appendChild(figure)
   }
@@ -28,7 +33,7 @@ export default class ComponentsDom {
     // renderiza o header2 e mostra a imagem que está arquivada no localStorage
     // a imagem deve term um "escutador" para que, ao ser clicada, possa abrir o modal "menu do usuário"
     const sectionUserInfo = document.querySelector('.userinfo')
-    const figure = document.createElement('figure')
+    const figure = document.querySelector('.userinfo__figure')
     const imgUserInfo = document.createElement('img')
     const userName = document.createElement('h2')
     const dropDown = document.querySelector('.dropDown')
@@ -73,16 +78,92 @@ export default class ComponentsDom {
     // checkbox deve alterar o hábito para concluído. Deve ter um escutador para chamar a classe UpdateHabit.update()
     const habits = await GetAllRequest.getAll()
     const cardHabits = document.querySelector('.main__data')
+    console.log(habits)
+    const buttonMoreUpdate = document.querySelector('.button__loadMore')
+    
 
-    habits.forEach(element => {
+    habits.forEach((element, index) => {
+      if(index <= 7){
       const card = document.createElement('li')
       const check = document.createElement('div')
       const title = document.createElement('p')
       const description = document.createElement('p')
       const category = document.createElement('p')
       const edit = document.createElement('img')
+      const status = element.habit_status
+      const id = element.habit_id
 
-      check.className = 'main__dataCheck'
+      check.addEventListener('click', (event) => {
+        if(check.className === 'main__dataCheck' && card.className === ''){
+          card.className = 'main__datali'
+        check.className = 'main__dataliCheck'
+        }else{
+          check.className = 'main__dataCheck'
+          card.className = ''
+      }
+      })
+
+      if(status === true){
+        card.className = 'main__datali'
+        check.className = 'main__dataliCheck'
+      } else if(status === false) {
+        check.className = 'main__dataCheck'
+      }
+      title.className = 'main__dataTitle'
+      description.className = 'main__dataDescription'
+      category.className = 'main__dataCategory'
+      edit.className = 'main__dataEdit'
+
+      title.innerText = `${element.habit_title}`
+      description.innerText = `${element.habit_description}`
+      category.innerText = `${element.habit_category}`
+      edit.src = "../assets/img/Group 39.png"
+
+      edit.id = element.habit_id
+
+      edit.addEventListener('click', () => {
+        ModalEditHabit.render(edit.id)
+      })
+
+      card.append(check, title, description, category, edit)
+      cardHabits.appendChild(card)
+    }
+    });
+
+
+
+
+
+
+
+    buttonMoreUpdate.addEventListener('click', (event) =>{
+
+    habits.forEach((element, index) => {
+      const card = document.createElement('li')
+      const check = document.createElement('div')
+      const title = document.createElement('p')
+      const description = document.createElement('p')
+      const category = document.createElement('p')
+      const edit = document.createElement('img')
+      const status = element.habit_status
+      const id = element.habit_id
+
+      check.addEventListener('click', (event) => {
+        if(check.className === 'main__dataCheck' && card.className === ''){
+          card.className = 'main__datali'
+        check.className = 'main__dataliCheck'
+        }else{
+          check.className = 'main__dataCheck'
+          card.className = ''
+      }
+      })
+
+      if(status === true){
+        card.className = 'main__datali'
+        check.className = 'main__dataliCheck'
+      } else if(status === false) {
+        check.className = 'main__dataCheck'
+      }
       title.className = 'main__dataTitle'
       description.className = 'main__dataDescription'
       category.className = 'main__dataCategory'
@@ -96,7 +177,8 @@ export default class ComponentsDom {
       card.append(check, title, description, category, edit)
       cardHabits.appendChild(card)
     });
+    })
+
   }
 }
 
-// ModalCreateHabit.render()
