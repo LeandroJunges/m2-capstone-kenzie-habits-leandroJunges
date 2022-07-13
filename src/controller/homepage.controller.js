@@ -2,7 +2,7 @@ import GetAllRequest from "./api-get-all.controller.js";
 import EditHabit from "./api-edit-habit.controller.js";
 import LoginRequest from "./login.controller.js";
 import ModalCreateHabit from "./modal-create-habit.controller.js";
-
+import ModalEditHabit from "./modal-edit-habit.controller.js"
 
 export default class ComponentsDom {
 
@@ -19,7 +19,6 @@ export default class ComponentsDom {
     headerImg.className = 'header__avatarUser'
     headerImg.alt = 'Avatar User'
     headerImg.src = JSON.parse(img)
-    console.log(img)
     figure.appendChild(headerImg)
     headerUserInfo.appendChild(figure)
   }
@@ -114,6 +113,12 @@ export default class ComponentsDom {
       category.innerText = `${element.habit_category}`
       edit.src = "../assets/img/Group 39.png"
 
+      edit.id = element.habit_id
+
+      edit.addEventListener('click', () => {
+        ModalEditHabit.render(edit.id)
+      })
+
       card.append(check, title, description, category, edit)
       cardHabits.appendChild(card)
     }
@@ -164,5 +169,3 @@ export default class ComponentsDom {
 
   }
 }
-
-// ModalCreateHabit.render()
