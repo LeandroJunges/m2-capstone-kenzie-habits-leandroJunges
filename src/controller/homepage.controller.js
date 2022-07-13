@@ -8,6 +8,7 @@ import ModalCreateHabit from "./modal-create-habit.controller.js";
 import DeleteHabit from "./api-delete-habit.controller.js";
 
 import ModalEditHabit from "./modal-edit-habit.controller.js"
+import User from "../models/user.models.js";
 
 
 export default class ComponentsDom {
@@ -76,7 +77,7 @@ export default class ComponentsDom {
     // botão Carregar Mais deve renderizar os hábitos de todas as páginas da API
     // botão ... deve ter escutador para abrir o Modal "Editar Hábito"
     // checkbox deve alterar o hábito para concluído. Deve ter um escutador para chamar a classe UpdateHabit.update()
-    const habits = await GetAllRequest.getAll()
+    let habits = await User.allPages()
     const cardHabits = document.querySelector('.main__data')
     console.log(habits)
     const buttonMoreUpdate = document.querySelector('.button__loadMore')
