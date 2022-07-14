@@ -117,9 +117,8 @@ export default class ComponentsDom {
       const id = element.habit_id
       check.id = element.habit_id
 
-      check.addEventListener('click', async(event) => {
-         await EditHabit.check(check.id)
-         location.reload()
+      check.addEventListener('click', (event) => {
+        EditHabit.check(check.id)
       })
 
       if(status === true){
@@ -191,7 +190,6 @@ export default class ComponentsDom {
 
       check.addEventListener('click', async(event) => {
         await EditHabit.check(check.id)
-        location.reload()
      })
       title.innerText = `${element.habit_title}`
       description.innerText = `${element.habit_description}`
