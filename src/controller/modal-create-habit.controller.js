@@ -92,7 +92,6 @@ export default class ModalCreateHabit {
     categoryOptionEstudosText.innerText = 'Estudos'
     categoryOptionEstudosImg.src = ''
 
-
     titleInput.placeholder = 'Digitar título'
     descriptionInput.placeholder = 'Digitar descrição'
 
