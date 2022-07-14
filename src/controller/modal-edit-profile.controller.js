@@ -64,9 +64,11 @@ export default class ModalEditProfile {
         buttonSave.addEventListener("click", ()=>{
           
           if(!inputName.value && !inputImg.value){
+
             this.body.removeChild(generalContainer)
             VisualResponses.failure()
             setTimeout(() => {document.location.reload()}, 2000)
+
           }else if(inputName.value && inputImg.value){ 
             
             localStorage.removeItem("@habits-kenzie:usr_image")

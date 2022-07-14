@@ -22,8 +22,10 @@ export default class EditHabit {
     })
     .then(res => res.json())
     .then(res => {
+
       VisualResponses.success("update")
         setTimeout(() => {document.location.reload()}, 2000)
+
     })
     .catch(err => console.log(err));
   }
@@ -37,6 +39,7 @@ export default class EditHabit {
       }
     })
     .then(res => res.json())
+
     .then(() => {
       VisualResponses.success("update")
       setTimeout(() => {document.location.reload()}, 2000)

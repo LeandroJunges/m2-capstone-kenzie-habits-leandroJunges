@@ -30,11 +30,14 @@ export default class VisualResponses {
         modalText.innerText = "Preencha todos os campos corretamente"
 
         modalBackground.id = 'modalBackground'
-        divModalFailure.id = 'modalContent'
+        divModalFailure.id = 'modalContent__failure'
         divModalFailureHeader.id = 'modalHeader'
 
-        
-    
+        setTimeout(() => {
+            this.main.removeChild(modalBackground)
+            this.head.removeChild(link)
+        }, 2000)
+
     }
 
     static success (type) {
@@ -74,20 +77,19 @@ export default class VisualResponses {
         if(type === "updateName"){
             modalText.innerText = "Seu nome foi alterado!"
         }
+
+       
         if(type === "updateImg"){
             modalText.innerText = "Sua imagem foi alterado!"
         }
+        
         if(type === "updateAll"){
             modalText.innerText = "Seu nome e sua Imagem foi alterado!"
         }
         
-                
+        if(type === "delete"){
+            modalText.innerText = "Seu hábito foi deletado"
+        }
 
-
-             
-              
-
-
-    
     }
 }
