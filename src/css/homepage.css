@@ -377,9 +377,28 @@ header{
     background-color: #F1F3F5;
 }
 
+.div__loadMore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .button__loadMore{
-    display: none;
-    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 28px;
+    gap: 10px;
+
+    position: absolute;
+    width: 152px;
+    height: 32px;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 7rem;
+    border: none;
+    color: white;
+    background-color: var(--brand-1);
 }
 
 @media screen and (min-width: 700px) {
