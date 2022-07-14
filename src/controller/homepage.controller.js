@@ -117,7 +117,6 @@ export default class ComponentsDom {
 
       check.addEventListener('click', async(event) => {
          await EditHabit.check(check.id)
-         location.reload()
       })
 
       if(status === true){
