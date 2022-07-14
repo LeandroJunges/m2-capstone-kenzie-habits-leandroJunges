@@ -22,12 +22,10 @@ export default class EditHabit {
     })
     .then(res => res.json())
     .then(res => {
-      console.log(res)
 
       VisualResponses.success("update")
-      setTimeout(() => {document.location.reload()}, 2000)
+        setTimeout(() => {document.location.reload()}, 2000)
 
-      return res
     })
     .catch(err => console.log(err));
   }
