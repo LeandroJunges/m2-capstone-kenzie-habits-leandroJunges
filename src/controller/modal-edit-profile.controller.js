@@ -18,6 +18,7 @@ export default class ModalEditProfile {
         
         const generalContainer = document.createElement("div")
         generalContainer.classList.add("container")
+        generalContainer.id = 'containerEdit'
         const form            = document.createElement("form")
         form.classList.add("container__form")
         const divHeader       = document.createElement("div")
