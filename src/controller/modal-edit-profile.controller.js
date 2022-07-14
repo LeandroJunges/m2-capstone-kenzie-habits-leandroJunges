@@ -1,23 +1,19 @@
+import EditProfile from "./api-edit-profile.controller.js"
+
 export default class ModalEditProfile {
   static head = document.querySelector("head")
   static body = document.querySelector("body")
   static btnEdit = document.querySelector(".dropDown__editar")
-  static main = document.querySelector("main")
 
-  static teste(){
-
-  }
-
-  static render() {
-    // renderiza Modal Editar Perfil
+   static render() {
     
-   
-
-    this.btnEdit.addEventListener("click", ()=>{
+        this.btnEdit.addEventListener("click", ()=>{
         const link            = document.createElement("link")
         link.rel  = "stylesheet"  
         link.href = "../css/modal-edit-profile.css"
+
         this.head.appendChild(link)
+        
         const generalContainer = document.createElement("div")
         generalContainer.classList.add("container")
         const form            = document.createElement("form")
@@ -52,7 +48,7 @@ export default class ModalEditProfile {
         const buttonSave      = document.createElement("button")
         buttonSave.id         = "btnsend"
         buttonSave.innerText  = "Salvar Alterações"
-        
+        buttonSave.type = "button"
         divButton.appendChild(buttonSave)
         divContent.append(labelName, inputName, labelImg, inputImg)
         divHeader.append(h1, buttonClose)
@@ -62,6 +58,26 @@ export default class ModalEditProfile {
 
         buttonClose.addEventListener("click", ()=>{
           this.body.removeChild(generalContainer)
+        })
+        buttonSave.addEventListener("click", ()=>{
+
+          if(!inputName.value && !inputImg.value){
+            console.log("Erro! Necessário preencher um dos campos! ")
+          }else if(inputName.value && inputImg.value){ 
+            localStorage.removeItem("@habits-kenzie:usr_image")
+            localStorage.removeItem("@habits-kenzie:usr_name")
+            EditProfile.updateAll()
+
+          }else if(inputImg.value){
+              localStorage.removeItem("@habits-kenzie:usr_image")
+              EditProfile.updateImage()
+          }else{
+            localStorage.removeItem("@habits-kenzie:usr_name")
+            EditProfile.updateName()
+          }
+  
+
+            // window.location.reload(true)
         })
     })
 
