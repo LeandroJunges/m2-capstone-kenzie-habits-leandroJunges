@@ -6,6 +6,8 @@ export default class ModalEditProfile {
   static btnEdit = document.querySelector(".dropDown__editar")
 
    static render() {
+
+
     
         this.btnEdit.addEventListener("click", ()=>{
         const link            = document.createElement("link")
