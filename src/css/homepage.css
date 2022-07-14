@@ -263,6 +263,7 @@ header{
     border: none;
     width: 5rem;
     height: 1.8rem;
+    border-radius: 4px;
 }
 
 .main__titleContent{
@@ -353,6 +354,7 @@ header{
 
 .main__dataCategory{
     display: none;
+    color: var(--brand-1);
 }
 
 .main__data>li>p{
@@ -372,6 +374,7 @@ header{
 
 .button__loadMore{
     display: none;
+    border-radius: 4px;
 }
 
 @media screen and (min-width: 700px) {
