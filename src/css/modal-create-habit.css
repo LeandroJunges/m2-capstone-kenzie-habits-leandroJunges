@@ -1,3 +1,15 @@
+@keyframes anim {
+    from{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to{
+        transform: scale(1.0);
+        opacity: 1;
+    }
+}
+
 #modalBackground{
     display: flex;
     position: fixed;
@@ -19,6 +31,9 @@
     gap: 32px;
     width: 60%;
     border-radius: 8px;    
+    transition: 0.5s;
+    animation-name: anim;
+    animation-duration: 0.5s;
 }
 
 #modalHeader{
