@@ -109,7 +109,6 @@ header{
     position: absolute;
     width: 13rem;
     height: 7rem;
-    /* justify-content: end; */
     top: 53px;
     left: 10%;
     flex-direction: column;
@@ -604,4 +603,6 @@ header{
         margin-left: 4rem;
         width: 37%;
     }
+
 }
+
