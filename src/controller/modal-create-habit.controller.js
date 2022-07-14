@@ -30,10 +30,26 @@ export default class ModalCreateHabit {
     const categorySelect = document.createElement('select')
     const categoryOption = document.createElement('option')
     const categoryOptionLazer = document.createElement('option')
+    const categoryOptionLazerImg = document.createElement('img')
+    const categoryOptionLazerText = document.createElement('p')
+
     const categoryOptionTrabalho = document.createElement('option')
+    const categoryOptionTrabalhoImg = document.createElement('img')
+    const categoryOptionTrabalhoText = document.createElement('p')
+
     const categoryOptionSaude = document.createElement('option')
-    const categoryOptionEstudos = document.createElement('option')
+    const categoryOptionSaudeImg = document.createElement('img')
+    const categoryOptionSaudeText = document.createElement('p')
+
+    const categoryOptionEstudos = document.createElement('option')    
+    const categoryOptionEstudosImg = document.createElement('img')
+    const categoryOptionEstudosText = document.createElement('p')
+
     const categoryOptionCasa = document.createElement('option')
+    const categoryOptionCasaImg = document.createElement('img')
+    const categoryOptionCasaText = document.createElement('p')
+
+
     const insertButton = document.createElement('button')
 
     this.main.append(modalBackground)
@@ -48,12 +64,13 @@ export default class ModalCreateHabit {
     formCreateHabit.append(descriptionInput)
     formCreateHabit.append(categoryLabel)
     formCreateHabit.append(categorySelect)
-    categorySelect.append(categoryOption)
-    categorySelect.append(categoryOptionLazer)
-    categorySelect.append(categoryOptionTrabalho)
-    categorySelect.append(categoryOptionSaude)
-    categorySelect.append(categoryOptionEstudos)
-    categorySelect.append(categoryOptionCasa)
+    categorySelect.append(categoryOption, categoryOptionLazer, categoryOptionTrabalho, categoryOptionSaude, categoryOptionEstudos, categoryOptionCasa)
+    categoryOptionCasa.append(categoryOptionCasaImg, categoryOptionCasaText)
+    categoryOptionLazer.append(categoryOptionLazerImg, categoryOptionLazerText)
+    categoryOptionTrabalho.append(categoryOptionTrabalhoImg, categoryOptionTrabalhoText)
+    categoryOptionSaude.append(categoryOptionSaudeImg, categoryOptionSaudeText)
+    categoryOptionEstudos.append(categoryOptionEstudosImg, categoryOptionEstudosText)
+
     formCreateHabit.append(insertButton)
 
     modalTitle.innerText = 'Criar hábito'
@@ -63,11 +80,18 @@ export default class ModalCreateHabit {
     categoryLabel.innerText = 'Categoria'
     insertButton.innerText = 'Inserir'
     categoryOption.innerText = 'Selecionar categoria'
-    categoryOptionLazer.innerText = 'Lazer'
-    categoryOptionTrabalho.innerText = 'Trabalho'
-    categoryOptionSaude.innerText = 'Saude'
-    categoryOptionCasa.innerText = 'Casa'
-    categoryOptionEstudos.innerText = 'Estudos'
+
+    categoryOptionCasaText.innerText = 'Casa'
+    categoryOptionCasaImg.src = ''
+    categoryOptionLazerText.innerText = 'Lazer'
+    categoryOptionLazerImg.src = ''
+    categoryOptionTrabalhoText.innerText = 'Trabalho'
+    categoryOptionTrabalhoImg.src = ''
+    categoryOptionSaudeText.innerText = 'Saude'
+    categoryOptionSaudeImg.src = ''
+    categoryOptionEstudosText.innerText = 'Estudos'
+    categoryOptionEstudosImg.src = ''
+
 
     titleInput.placeholder = 'Digitar título'
     descriptionInput.placeholder = 'Digitar descrição'
@@ -91,6 +115,11 @@ export default class ModalCreateHabit {
     categorySelect.classList.add('modalContent__modalFormCreateHabit--modalInput')
     categoryOption.classList.add('modalContent__modalFormCreateHabit--option')
     insertButton.classList.add('modalContent__modalFormCreateHabit--insertButton')
+    categoryOptionCasaText.classList.add("modalContent__modalFormCreateHabit--optionText")
+    categoryOptionLazerText.classList.add("modalContent__modalFormCreateHabit--optionText")
+    categoryOptionTrabalhoText.classList.add("modalContent__modalFormCreateHabit--optionText")
+    categoryOptionSaudeText.classList.add("modalContent__modalFormCreateHabit--optionText")
+    categoryOptionEstudosText.classList.add("modalContent__modalFormCreateHabit--optionText")
 
     insertButton.addEventListener('click', () => {
 
