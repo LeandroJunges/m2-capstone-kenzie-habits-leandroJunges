@@ -59,7 +59,7 @@ export default class VisualResponses {
         divModalSuccessContent.append(modalText)
 
         modalBackground.id = 'modalBackground'
-        divModalSuccess.id = 'modalContent'
+        divModalSuccess.id = 'modalContent__success'
         divModalSuccessIcon.id = 'modalIcon'
 
         modalTitle.innerText = "Sucesso!"
@@ -69,10 +69,10 @@ export default class VisualResponses {
         }
         if(type === "update"){
             modalText.innerText = "Seu hábito foi alterado"
-        }
-        if(type === "delete"){
-            modalText.innerText = "Seu hábito foi deletado"
-        }
+
+        }        
+              
+
     
     }
 }

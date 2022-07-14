@@ -26,7 +26,7 @@ export default class CreateHabit {
       } 
       else{
         VisualResponses.success("create")
-        setTimeout(document.location.reload(), 8000)
+        setTimeout(() => {document.location.reload()}, 2000)
       }
     })
     .catch(res => console.log(res))
