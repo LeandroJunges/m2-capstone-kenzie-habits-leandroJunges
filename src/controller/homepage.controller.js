@@ -90,7 +90,6 @@ export default class ComponentsDom {
     let habits = []
     const ha = await GetAllRequest.getAll()
     habits.push(...ha)
-    console.log(ha)
     const cardHabits = document.querySelector('.main__data')
     const buttonMoreUpdate = document.querySelector('.button__loadMore')
     const buttonFinish = document.querySelector('.main__filterButtonFinish')
@@ -172,16 +171,10 @@ export default class ComponentsDom {
       const category = document.createElement('p')
       const edit = document.createElement('img')
       const status = element.habit_status
+      const id = element.habit_id
+      check.id = element.habit_id
 
-      check.addEventListener('click', (event) => {
-        if(check.className === 'main__dataCheck' && card.className === ''){
-          card.className = 'main__datali'
-        check.className = 'main__dataliCheck'
-        }else{
-          check.className = 'main__dataCheck'
-          card.className = ''
-      }
-      })
+
 
       if(status === true){
         card.className = 'main__datali'
