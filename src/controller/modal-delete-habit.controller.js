@@ -4,11 +4,11 @@ export default class ModalDeleteHabit {
   static body = document.querySelector("body")
   static head = document.querySelector("head")
   
-  static render() {
+  static render(id) {
     // renderiza na tela o aviso de que vai deletar o hábito
     // Botão Sim, excluir o hábito deletar hábito na API -> DeleteHabit.delete()
-    const btnErase = document.querySelector("modalContent__modalFormCreateHabit--deleteButton")
-    btnErase.addEventListener("click", ()=>{
+    // const btnErase = document.querySelector("modalContent__modalFormCreateHabit--deleteButton")
+    // btnErase.addEventListener("click", ()=>{
 
       const link    = document.createElement("link")
       link.rel ="stylesheet"
@@ -46,7 +46,7 @@ export default class ModalDeleteHabit {
       btnCancel.id                 = "cancel"
       btnCancel.innerText          = "Cancelar"
       
-      const btnConfirm             = document.createElement("div")
+      const btnConfirm             = document.createElement("button")
       btnConfirm.id                = "confirm"
       btnConfirm.innerText         = "Sim, excluir esse hábito"
       
@@ -59,9 +59,10 @@ export default class ModalDeleteHabit {
       this.body.append(containerMain)
       
       btnConfirm.addEventListener("click", ()=>{
-           DeleteHabit.delete()
+        console.log(id)
+           DeleteHabit.delete(id)
+          //  window.location.reload(true)
       } )
 
-    })
-  }
-}
+    }
+   }

@@ -12,11 +12,14 @@ ComponentsDom.userInfo();
 // ComponentsDom.main();
 ModalCreateHabit.render();
 ModalUserMenu.render();
+ModalEditProfile.render()
 // ModalEditHabit.render();
 // ModalDeleteHabit.render();
+
 // Filter.allPages();
 
 
 // await ComponentsDom.habitRequest()
 
 ComponentsDom.filters()
+
