@@ -8,6 +8,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
+    transition: 1s;
 }
 
 #modalContent{
@@ -19,6 +20,7 @@
     gap: 32px;
     width: 60%;
     border-radius: 8px;    
+    transition: 0.5s;
 }
 
 #modalHeader{

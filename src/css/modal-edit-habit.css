@@ -8,6 +8,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
+
 }
 
 #modalContent{
@@ -18,7 +19,21 @@
     padding: 32px;
     gap: 32px;
     width: 60%;
-    border-radius: 8px;    
+    border-radius: 8px;
+    animation-name: anim;
+    animation-duration: 0.5s;
+}
+
+@keyframes anim {
+    from{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to{
+        transform: scale(1.0);
+        opacity: 1;
+    }
 }
 
 #modalHeader{

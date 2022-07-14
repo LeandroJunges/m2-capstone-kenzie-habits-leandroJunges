@@ -17,6 +17,7 @@ body{
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    transition: 1s;
 }
 .container__box{
     
@@ -27,6 +28,7 @@ body{
     flex-direction: column;
     background-color:rgba(255, 255, 255, 1) ;
     border-radius: 0.5rem;
+    transition: 0.5s;
 }
 .container__header{
     display: flex;

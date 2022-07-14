@@ -130,7 +130,7 @@ export default class ComponentsDom {
       description.innerText = `${element.habit_description}`
       category.innerText = `${element.habit_category}`
       edit.src = "../assets/img/Group 39.png"
-
+      const modalEdit = document.querySelector('#modalContent')
       edit.id = element.habit_id
 
       edit.addEventListener('click', () => {
@@ -196,6 +196,7 @@ export default class ComponentsDom {
       edit.id = element.habit_id
 
       edit.addEventListener('click', () => {
+        console
         ModalEditHabit.render(edit.id)
       })
 
@@ -204,6 +205,8 @@ export default class ComponentsDom {
       cardHabits.appendChild(card)
       
     });
+
+    buttonMoreUpdate.style.display = 'none'
     })
 
 
@@ -219,15 +222,18 @@ const btnAll = document.querySelector(".main__filterButtonAll")
 const btnFinish = document.querySelector('.main__filterButtonFinish');
 const card = document.querySelectorAll('li')
 const cardHabits = document.querySelector('.main__data')
+const buttonMoreUpdate = document.querySelector('.button__loadMore')
 ComponentsDom.main(ha);
 btnAll.addEventListener('click', (event) => {   
     cardHabits.innerHTML = ''
     ComponentsDom.main(ha);
+    buttonMoreUpdate.style.display = 'flex'
 })
 
 btnFinish.addEventListener('click', (event) => {
     cardHabits.innerHTML = ''
     ComponentsDom.main(habit);
+    buttonMoreUpdate.style.display = 'flex'
 })
 
 
