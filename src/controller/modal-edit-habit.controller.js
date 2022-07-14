@@ -12,9 +12,11 @@ export default class ModalEditHabit {
   static main = document.querySelector('main')
   static data = {}
 
-  static render(id) {
+  static async render(id) {
     //console.log(id)
     const habitId = id
+    const habit = await GetAllRequest.getByID(habitId);
+    console.log(habit);
     const link = document.createElement('link')
     this.head.append(link)
     link.rel = 'stylesheet'
@@ -69,6 +71,7 @@ export default class ModalEditHabit {
     divButtons.append(deleteButton, insertButton)
     formEditHabit.append(divButtons)
 
+    
     modalTitle.innerText = 'Editar hábito'
     closeButton.innerText = 'X'
     titleLabel.innerText = 'Título'
@@ -78,13 +81,30 @@ export default class ModalEditHabit {
     deleteButton.innerText = 'Excluir'
     categoryOption.innerText = 'Selecionar categoria'
     categoryOptionLazer.innerText = 'Lazer'
+    if(habit.habit_category.toLowerCase() == 'lazer') {
+      categoryOptionLazer.selected = 'selected';
+    }
     categoryOptionTrabalho.innerText = 'Trabalho'
-    categoryOptionSaude.innerText = 'saude'
+    if(habit.habit_category.toLowerCase() == 'trabalho') {
+      categoryOptionTrabalho.selected = 'selected';
+    }
+    categoryOptionSaude.innerText = 'Saude'
+    if(habit.habit_category.toLowerCase() == 'saude') {
+      categoryOptionSaude.selected = 'selected';
+    }
     categoryOptionCasa.innerText = 'Casa'
+    if(habit.habit_category.toLowerCase() == 'casa') {
+      categoryOptionCasa.selected = 'selected';
+    }
     categoryOptionEstudos.innerText = 'Estudos'
+    if(habit.habit_category.toLowerCase() == 'estudos') {
+      categoryOptionEstudos.selected = 'selected';
+    }
 
     titleInput.placeholder = 'Digitar título'
+    titleInput.value = habit.habit_title;
     descriptionInput.placeholder = 'Digitar descrição'
+    descriptionInput.value = habit.habit_description;
 
     labelStatus.innerText = 'Status'
     inputStatus.type = 'checkbox'
@@ -98,6 +118,7 @@ export default class ModalEditHabit {
     divModalEditHabit.id = 'modalContent'
     divModalEditHabitHeader.id = 'modalHeader'
     formEditHabit.id = 'modalFormCreateHabit'
+    console.log(categorySelect)
 
     modalTitle.classList.add('modalContent__modalHeader--modalTitle')
     closeButton.classList.add('modalContent__modalHeader--closeButton')
