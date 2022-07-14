@@ -1,5 +1,5 @@
 import CreateHabit from "./api-create-habit.controller.js"
-
+import DeleteHabit from "./api-delete-habit.controller.js"
 export default class VisualResponses {
 
     static head = document.querySelector('head')
@@ -59,7 +59,7 @@ export default class VisualResponses {
         divModalSuccessContent.append(modalText)
 
         modalBackground.id = 'modalBackground'
-        divModalSuccess.id = 'modalContent'
+        divModalSuccess.id = 'modalContent__success'
         divModalSuccessIcon.id = 'modalIcon'
 
         modalTitle.innerText = "Sucesso!"
@@ -69,6 +69,7 @@ export default class VisualResponses {
         }
         if(type === "update"){
             modalText.innerText = "Seu hábito foi alterado"
+
         }
         if(type === "updateName"){
             modalText.innerText = "Seu nome foi alterado!"
@@ -81,6 +82,12 @@ export default class VisualResponses {
         }
         
                 
+
+
+             
+              
+
+
     
     }
 }

@@ -1,4 +1,4 @@
-@keyframes anim {
+@keyframes anime {
     from{
         transform: scale(0.5);
         opacity: 0;
@@ -40,8 +40,13 @@ body{
     flex-direction: column;
     background-color:rgba(255, 255, 255, 1) ;
     border-radius: 0.5rem;
+
     transition: 0.5s;
-    animation-name: anim;
+    animation-name: anime;
+
+
+  
+
     animation-duration: 0.5s;
 }
 
@@ -136,9 +141,14 @@ body{
 @media (min-width: 375px){
 
     .container__form{
+
         width: 22rem;
         height: 25rem;
         margin: 24rem auto 31rem auto
+
+        
+   
+
     }
     .container__header{
         
@@ -152,6 +162,7 @@ body{
         width: 20rem;
         margin: 2rem auto 0 auto
     }
+
     #btnsend{
         padding: 0.8rem;
     }
@@ -159,6 +170,10 @@ body{
     #btnsend:hover{
         background-color: rgba(160, 173, 249, 1);
     }       
+
+
+    
+
 }
 
 

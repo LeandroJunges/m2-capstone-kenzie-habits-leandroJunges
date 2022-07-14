@@ -63,9 +63,14 @@ export default class EditProfile {
         return res
       })
       .then(res => {
+
         VisualResponses.success("updateName")
         
         setTimeout(() => {document.location.reload()}, 2000)
+
+        
+      
+
         return res
       })
       .catch(err => console.log(err))
