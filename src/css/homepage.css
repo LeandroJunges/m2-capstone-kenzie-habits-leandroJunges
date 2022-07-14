@@ -121,7 +121,7 @@ header{
     background-color: white;
 
     animation-name: fly;
-    animation-duration: 0.5s;
+    animation-duration: 0.2s;
 }
 
 .userinfo__container{
