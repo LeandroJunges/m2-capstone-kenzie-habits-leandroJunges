@@ -25,10 +25,10 @@ export default class EditProfile {
     .then(res =>  res.json() )
     .then(res =>{ 
         localStorage.setItem("@habits-kenzie:usr_image", JSON.stringify(data.usr_image))
-        // document.location.reload(true)
       return res})
       .then(res => {
-        window.location.reload(true)
+        VisualResponses.success("updateImg")
+        setTimeout(() => {document.location.reload()}, 2000)
         return res
       })
       .catch(err => console.log(err))
@@ -63,8 +63,14 @@ export default class EditProfile {
         return res
       })
       .then(res => {
+
+        VisualResponses.success("updateName")
         
-        window.location.reload(true)
+        setTimeout(() => {document.location.reload()}, 2000)
+
+        
+      
+
         return res
       })
       .catch(err => console.log(err))
@@ -101,7 +107,8 @@ export default class EditProfile {
       return res
     })
     .then(res => {
-      window.location.reload(true)
+      VisualResponses.success("updateAll")
+      setTimeout(() => {document.location.reload()}, 2000)
       return res
     })
     .catch(err => console.log(err))
