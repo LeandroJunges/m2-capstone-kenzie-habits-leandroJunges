@@ -189,9 +189,8 @@ export default class ComponentsDom {
       category.className = 'main__dataCategory'
       edit.className = 'main__dataEdit'
 
-      check.addEventListener('click', async(event) => {
-        await EditHabit.check(check.id)
-        location.reload()
+      check.addEventListener('click', () => {
+        EditHabit.check(check.id)
      })
       title.innerText = `${element.habit_title}`
       description.innerText = `${element.habit_description}`
