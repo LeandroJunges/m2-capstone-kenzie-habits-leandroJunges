@@ -56,7 +56,7 @@ header{
     gap: 12px;
     justify-content: center;
     align-items: center;
-    background-color: var(--grey-6);
+    background-color: white;
 }
 
 .userinfo__container{
@@ -69,16 +69,38 @@ header{
     display: flex;
 }
 
-.dropDown>button{
+/* .dropDown>button{
     border: none;
     background-color: var(--grey-6);
     color: var(--grey-2);
     width: 9rem;
     height: 2rem;
+} */
+
+.dropDown__editar{
+    border: none;
+    background-color: white;
+    color: var(--grey-2);
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: 4px;
+}
+
+.dropDown__Logout{
+    border: none;
+    background-color: var(--grey-5);
+    color: var(--grey-2);
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: 4px;
 }
 
 .dropDown__editar>img{
     margin-right: 20px;
+}
+
+.dropDown__Logout>img{
+    margin-right: 52px;
 }
 
 /* main */
@@ -169,7 +191,7 @@ header{
 
 .main__titleContent{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     padding: 0 1rem 0 1rem;
     margin-left: 0.1rem;
@@ -179,7 +201,8 @@ header{
 }
 
 .main__titleTitle{
-    margin-left: -24%;
+    margin-left: 5%;
+    width: 58%;
 }
 
 .main__titleDescription{
@@ -198,9 +221,12 @@ header{
     font-size: 1rem;
 }
 
+.main__contentList{
+    overflow: scroll;
+}
+
 .main__data{
     width: 98%;
-    overflow: scroll;
     height: 45vh;
 }
 .main__datali{
@@ -208,7 +234,8 @@ header{
 }
 
 .main__dataTitle{
-    margin-left: 10rem;
+    margin-left: 15%;
+    width: 59%;
 }
 
 .main__dataliCheck{

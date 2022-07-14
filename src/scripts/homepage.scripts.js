@@ -9,12 +9,14 @@ import Filter from "../controller/filter-homepage.controller.js";
 
 ComponentsDom.header1();
 ComponentsDom.userInfo();
-ComponentsDom.main();
+// ComponentsDom.main();
 ModalCreateHabit.render();
 ModalUserMenu.render();
 // ModalEditHabit.render();
 // ModalDeleteHabit.render();
-Filter.allPages();
+// Filter.allPages();
 
 
-await ComponentsDom.habitRequest()
+// await ComponentsDom.habitRequest()
+
+ComponentsDom.filters()
