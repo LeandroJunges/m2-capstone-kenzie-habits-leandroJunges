@@ -582,7 +582,7 @@ header{
 
 @media screen and (min-width: 2000px) {
     .main__dataTitle {
-        margin-left: 3rem;
-        width: 38%;
+        margin-left: 4rem;
+        width: 37%;
     }
 }
