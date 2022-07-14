@@ -1,3 +1,4 @@
+import VisualResponses from "./modal-responses.controller.js"
 
 export default class EditProfile {
 
@@ -62,6 +63,7 @@ export default class EditProfile {
         return res
       })
       .then(res => {
+        
         window.location.reload(true)
         return res
       })
