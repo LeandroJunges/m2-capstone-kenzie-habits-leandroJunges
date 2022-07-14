@@ -1,3 +1,5 @@
+import VisualResponses from "./modal-responses.controller.js"
+
 export default class DeleteHabit {
     static token = JSON.parse(localStorage.getItem("@habits-kenzie:usr_token"))
     static base_url = "https://habits-kenzie.herokuapp.com/api/habits/"
@@ -12,11 +14,13 @@ export default class DeleteHabit {
         })
         .then(res => res.json())
         .then(res => {
-            window.location.reload(true)
+            
+            VisualResponses.success("delete")
+            setTimeout(() => {document.location.reload()}, 2000)
             return res
         })
         .catch(err => console.log(err))
-
+        
         return result
     }
 
