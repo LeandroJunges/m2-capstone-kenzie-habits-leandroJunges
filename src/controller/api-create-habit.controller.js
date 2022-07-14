@@ -1,3 +1,5 @@
+import VisualResponses from "./modal-responses.controller.js"
+
 export default class CreateHabit {
   static async create(title, description, category) {
     const data = {
@@ -18,17 +20,13 @@ export default class CreateHabit {
         })
     .then(res => res.json())
     .then(res => {
-      if(res.message === "habit_title obrigatório"){
-        alert('Título obrigatório')
-      }
-      if(res.message === "habit_description obrigatório"){
-        alert('Descrição obrigatória')
-      }
-      if(res.message === "categorias aceitas: saude, estudos, casa, trabalho e lazer"){
-        alert('Selecionar categoria')
-      } else{
-        document.location.reload()
-        alert('Novo hábito criado!')
+      console.log(res)
+      if(res.message === "habit_title obrigatório" || res.message === "habit_description obrigatório" || res.message === "categorias aceitas: saude, estudos, casa, trabalho e lazer"){
+        VisualResponses.failure()
+      } 
+      else{
+        VisualResponses.success("create")
+        setTimeout(() => {document.location.reload()}, 2000)
       }
     })
     .catch(res => console.log(res))

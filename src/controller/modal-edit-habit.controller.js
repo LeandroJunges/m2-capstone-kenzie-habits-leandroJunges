@@ -16,7 +16,6 @@ export default class ModalEditHabit {
     //console.log(id)
     const habitId = id
     const habit = await GetAllRequest.getByID(habitId);
-    console.log(habit);
     const link = document.createElement('link')
     this.head.append(link)
     link.rel = 'stylesheet'
@@ -118,7 +117,6 @@ export default class ModalEditHabit {
     divModalEditHabit.id = 'modalContent'
     divModalEditHabitHeader.id = 'modalHeader'
     formEditHabit.id = 'modalFormCreateHabit'
-    console.log(categorySelect)
 
     modalTitle.classList.add('modalContent__modalHeader--modalTitle')
     closeButton.classList.add('modalContent__modalHeader--closeButton')
@@ -144,7 +142,6 @@ export default class ModalEditHabit {
     })
     insertButton.addEventListener('click', () => {
       if(inputStatus.checked){
-        console.log(inputStatus.checked)
         EditHabit.check(habitId)
         EditHabit.update(habitId, titleInput.value, descriptionInput.value, categorySelect.value, )
       }
