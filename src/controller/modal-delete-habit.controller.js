@@ -1,15 +1,12 @@
 import DeleteHabit from "./api-delete-habit.controller.js"
+import VisualResponses from "./modal-responses.controller.js"
 
 export default class ModalDeleteHabit {
   static body = document.querySelector("body")
   static head = document.querySelector("head")
   
   static render(id) {
-    // renderiza na tela o aviso de que vai deletar o hábito
-    // Botão Sim, excluir o hábito deletar hábito na API -> DeleteHabit.delete()
-    // const btnErase = document.querySelector("modalContent__modalFormCreateHabit--deleteButton")
-    // btnErase.addEventListener("click", ()=>{
-
+    
       const link    = document.createElement("link")
       link.rel ="stylesheet"
       link.href = "../css/modal-delete-habit.css"
@@ -57,11 +54,23 @@ export default class ModalDeleteHabit {
       containerBox.append(containerHeader, containerContent, containerButtons)
       containerMain.append(containerBox)
       this.body.append(containerMain)
+
+
+    btnCloseDel.addEventListener("click", ()=>{
+        this.body.removeChild(containerMain)
+
+      })
+
+      btnCancel.addEventListener("click", ()=>{
+        this.body.removeChild(containerMain)
+      })
       
       btnConfirm.addEventListener("click", ()=>{
-        console.log(id)
            DeleteHabit.delete(id)
-          //  window.location.reload(true)
+           this.body.removeChild(containerMain)
+
+
+          
       } )
 
     }
