@@ -171,16 +171,10 @@ export default class ComponentsDom {
       const category = document.createElement('p')
       const edit = document.createElement('img')
       const status = element.habit_status
+      const id = element.habit_id
+      check.id = element.habit_id
 
-      check.addEventListener('click', (event) => {
-        if(check.className === 'main__dataCheck' && card.className === ''){
-          card.className = 'main__datali'
-        check.className = 'main__dataliCheck'
-        }else{
-          check.className = 'main__dataCheck'
-          card.className = ''
-      }
-      })
+
 
       if(status === true){
         card.className = 'main__datali'
