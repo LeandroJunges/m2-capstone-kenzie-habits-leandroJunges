@@ -30,11 +30,14 @@ export default class VisualResponses {
         modalText.innerText = "Preencha todos os campos corretamente"
 
         modalBackground.id = 'modalBackground'
-        divModalFailure.id = 'modalContent'
+        divModalFailure.id = 'modalContent__failure'
         divModalFailureHeader.id = 'modalHeader'
 
-        
-    
+        setTimeout(() => {
+            this.main.removeChild(modalBackground)
+            this.head.removeChild(link)
+        }, 2000)
+
     }
 
     static success (type) {

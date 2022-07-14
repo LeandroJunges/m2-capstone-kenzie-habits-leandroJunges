@@ -53,6 +53,23 @@
     animation-duration: 0.5s;
 }
 
+#modalContent__failure{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #E64445;
+    border: solid 2px #F03839;
+    color: #E9ECEF;
+    padding: 32px;
+    gap: 32px;
+    width: 70%;
+    max-width: 250px;
+    border-radius: 8px;    
+    transition: 0.5s;
+    animation-name: anim;
+    animation-duration: 0.5s;
+}
+
 #modalHeader{
     display: flex;
     justify-content: space-between;

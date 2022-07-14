@@ -1,4 +1,5 @@
 import EditProfile from "./api-edit-profile.controller.js"
+import VisualResponses from "./modal-responses.controller.js"
 
 export default class ModalEditProfile {
   static head = document.querySelector("head")
@@ -62,6 +63,7 @@ export default class ModalEditProfile {
         buttonSave.addEventListener("click", ()=>{
 
           if(!inputName.value && !inputImg.value){
+
             console.log("Erro! Necessário preencher um dos campos! ")
           }else if(inputName.value && inputImg.value){ 
             localStorage.removeItem("@habits-kenzie:usr_image")
