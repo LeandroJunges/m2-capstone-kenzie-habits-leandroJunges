@@ -355,6 +355,11 @@ header{
 .main__dataCategory{
     display: none;
     color: var(--brand-1);
+    font-family: 'Inter';
+     font-style: normal;
+      font-weight: 500;
+       font-size: 14px;
+        line-height: 22px;
 }
 
 .main__data>li>p{
@@ -501,9 +506,83 @@ header{
 
 }
 
+
+}
+
 @media screen and (min-width: 1024px) {
     .main__dataTitle {
         margin-left: 3rem;
-        width: 26%;
+        width: 14%;
+    }
+}
+
+@media screen and (min-width: 1070px) {
+    .main__dataTitle {
+        margin-left: 3rem;
+        width: 18%;
+    }
+}
+
+
+@media screen and (min-width: 1124px) {
+    .main__dataTitle {
+        margin-left: 3rem;
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 1224px) {
+    .main__dataTitle {
+        margin-left: 3rem;
+        width: 24%;
+    }
+}
+
+@media screen and (min-width: 1324px) {
+    .main__dataTitle {
+        margin-left: 3rem;
+        width: 28%;
+    }
+}
+
+@media screen and (min-width: 1424px) {
+    .main__dataTitle {
+        margin-left: 3rem;
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1524px) {
+    .main__dataTitle {
+        margin-left: 3rem;
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1624px) {
+    .main__dataTitle {
+        margin-left: 3rem;
+        width: 32%;
+    }
+}
+
+@media screen and (min-width: 1724px) {
+    .main__dataTitle {
+        margin-left: 3rem;
+        width: 34%;
+    }
+}
+
+@media screen and (min-width: 1824px) {
+    .main__dataTitle {
+        margin-left: 3rem;
+        width: 34%;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .main__dataTitle {
+        margin-left: 3rem;
+        width: 45%;
     }
 }
