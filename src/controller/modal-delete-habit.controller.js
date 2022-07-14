@@ -57,11 +57,20 @@ export default class ModalDeleteHabit {
       containerBox.append(containerHeader, containerContent, containerButtons)
       containerMain.append(containerBox)
       this.body.append(containerMain)
+
+
+    btnCloseDel.addEventListener("click", ()=>{
+        this.body.removeChild(containerMain)
+
+      })
+
+      btnCancel.addEventListener("click", ()=>{
+        this.body.removeChild(containerMain)
+      })
       
       btnConfirm.addEventListener("click", ()=>{
-        console.log(id)
            DeleteHabit.delete(id)
-          //  window.location.reload(true)
+          
       } )
 
     }
