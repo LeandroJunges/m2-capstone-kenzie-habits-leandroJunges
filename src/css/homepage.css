@@ -62,11 +62,6 @@
         transform: scale(1.0);
         opacity: 1;
     }
-
-    100%{
-        transform: scale(0.8);
-        opacity: 0;
-    }
 }
 
 /* header */
@@ -114,7 +109,6 @@ header{
     position: absolute;
     width: 13rem;
     height: 7rem;
-    /* justify-content: end; */
     top: 53px;
     left: 10%;
     flex-direction: column;
