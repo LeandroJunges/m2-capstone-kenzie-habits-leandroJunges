@@ -10,34 +10,17 @@
     --grey-6:   #F8F9FA;
 }
 
-/* header */
-header{
-    display: flex;
-    width: 100%;
-}
 
-.header__homePage{
-    margin: 0.8rem;
+@keyframes opa {
+    from{
+        /* transform: translateY(300px); */
+        opacity: 0;
+    }
 
-}
-
-.header__userInfo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header__mainPicture{
-    color: var(--brand-1);
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 27px;
-
-    animation-name: fly;
-    animation-duration: 0.5s;
-
+    to{
+        /* transform: translateY(0px); */
+        opacity: 1;
+    }
 }
 
 @keyframes left {
@@ -80,6 +63,37 @@ header{
         opacity: 1;
     }
 }
+
+/* header */
+header{
+    display: flex;
+    width: 100%;
+}
+
+.header__homePage{
+    margin: 0.8rem;
+
+}
+
+.header__userInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__mainPicture{
+    color: var(--brand-1);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+
+    animation-name: fly;
+    animation-duration: 0.5s;
+
+}
+
 
 .header__avatarUser{
     width: 2rem;
@@ -193,17 +207,6 @@ header{
 
 /* main content */
 
-@keyframes opa {
-    from{
-        /* transform: translateY(300px); */
-        opacity: 0;
-    }
-
-    to{
-        /* transform: translateY(0px); */
-        opacity: 1;
-    }
-}
 .main__content{
     width: 100%;
 
