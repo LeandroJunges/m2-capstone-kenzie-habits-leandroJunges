@@ -23,7 +23,7 @@ export default class EditHabit {
     .then(res => res.json())
     .then(res => {
       console.log(res)
-      VisualResponses.success("update")
+      //VisualResponses.success("update")
       window.location.reload(true)
       return res
     })
@@ -40,7 +40,7 @@ export default class EditHabit {
     })
     .then(res => res.json())
     .then(res => {
-      VisualResponses.success("update")
+      //.success("update")
       console.log(res)})
     .catch(err => console.log(err))
   }
