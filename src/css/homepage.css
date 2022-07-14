@@ -144,7 +144,7 @@ header{
 
 .dropDown__editar{
     border: none;
-    background-color: white;
+    background-color: var(--grey-5);
     color: var(--grey-2);
     width: 12rem;
     height: 2.5rem;
@@ -153,7 +153,7 @@ header{
 
 .dropDown__Logout{
     border: none;
-    background-color: var(--grey-5);
+    background-color: white;
     color: var(--grey-2);
     width: 12rem;
     height: 2.5rem;
@@ -165,7 +165,7 @@ header{
 }
 
 .dropDown__Logout>img{
-    margin-right: 52px;
+    margin-right: 20px;
 }
 
 /* main */
@@ -358,7 +358,7 @@ header{
     font-family: 'Inter';
      font-style: normal;
       font-weight: 500;
-       font-size: 14px;
+       font-size: 1rem;
         line-height: 22px;
 }
 

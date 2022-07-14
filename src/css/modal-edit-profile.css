@@ -1,4 +1,4 @@
-@keyframes anim {
+@keyframes anime {
     from{
         transform: scale(0.5);
         opacity: 0;
@@ -41,8 +41,8 @@ body{
     background-color:rgba(255, 255, 255, 1) ;
     border-radius: 0.5rem;
 
-    animation-name: anim;
-    animation-duration: 0.5;
+    animation-name: anime;
+    animation-duration: 0.5s;
 }
 
 .container__header{
@@ -139,6 +139,7 @@ h1{
     .container__form{
         width:32rem ;
         height:22rem;
+        
    
     }
     .container__header{
@@ -153,6 +154,8 @@ h1{
         height: 65%;
     
     }
+
+    
 }
 @media (min-width: 375){
 

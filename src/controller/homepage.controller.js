@@ -45,8 +45,10 @@ export default class ComponentsDom {
     const dropDown = document.querySelector('.dropDown')
     const logoutButton = document.querySelector('.dropDown__Logout')
     const editButton = document.querySelector('.dropDown__editar')
+    const bodyEP = document.querySelector('.container')
 
     editButton.addEventListener('click', async () => {
+      bodyEP.innerHTML = ''
       await ModalEditProfile.render()
     })
 
