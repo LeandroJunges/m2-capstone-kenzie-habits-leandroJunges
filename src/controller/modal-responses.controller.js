@@ -70,9 +70,17 @@ export default class VisualResponses {
         if(type === "update"){
             modalText.innerText = "Seu hábito foi alterado"
         }
+       
+    
+
+
+
+
+
+
+
         if(type === "delete"){
             modalText.innerText = "Seu hábito foi deletado"
         }
-    
     }
 }
