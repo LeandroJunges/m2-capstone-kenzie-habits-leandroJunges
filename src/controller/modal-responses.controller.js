@@ -73,9 +73,23 @@ export default class VisualResponses {
         if(type === "update"){
             modalText.innerText = "Seu hábito foi alterado"
 
-        }        
-              
+        }
+        if(type === "updateName"){
+            modalText.innerText = "Seu nome foi alterado!"
+        }
 
-    
+       
+        if(type === "updateImg"){
+            modalText.innerText = "Sua imagem foi alterado!"
+        }
+        
+        if(type === "updateAll"){
+            modalText.innerText = "Seu nome e sua Imagem foi alterado!"
+        }
+        
+        if(type === "delete"){
+            modalText.innerText = "Seu hábito foi deletado"
+        }
+
     }
 }

@@ -36,6 +36,7 @@ export default class ModalEditProfile {
         inputName.type        = "text"
         inputName.id          = "cName"
         inputName.placeholder = "Digite seu novo nome"
+        inputName.value = `${JSON.parse(localStorage.getItem("@habits-kenzie:usr_name"))}`
         const labelImg        = document.createElement("label")
         labelImg.for          = "cImg"
         labelImg.classList.add("container__content--legend")
@@ -61,21 +62,29 @@ export default class ModalEditProfile {
           this.body.removeChild(generalContainer)
         })
         buttonSave.addEventListener("click", ()=>{
-
+          
           if(!inputName.value && !inputImg.value){
 
-            console.log("Erro! Necessário preencher um dos campos! ")
+            this.body.removeChild(generalContainer)
+            VisualResponses.failure()
+            setTimeout(() => {document.location.reload()}, 2000)
+
           }else if(inputName.value && inputImg.value){ 
+            
             localStorage.removeItem("@habits-kenzie:usr_image")
             localStorage.removeItem("@habits-kenzie:usr_name")
             EditProfile.updateAll()
+            this.body.removeChild(generalContainer)
 
           }else if(inputImg.value){
               localStorage.removeItem("@habits-kenzie:usr_image")
               EditProfile.updateImage()
+              this.body.removeChild(generalContainer)
+
           }else{
             localStorage.removeItem("@habits-kenzie:usr_name")
             EditProfile.updateName()
+            this.body.removeChild(generalContainer)
           }
   
 
