@@ -1,5 +1,5 @@
 import CreateHabit from "./api-create-habit.controller.js"
-
+import DeleteHabit from "./api-delete-habit.controller.js"
 export default class VisualResponses {
 
     static head = document.querySelector('head')
@@ -70,7 +70,9 @@ export default class VisualResponses {
         if(type === "update"){
             modalText.innerText = "Seu hábito foi alterado"
         }
-                
+        if(type === "delete"){
+            modalText.innerText = "Seu hábito foi deletado"
+        }
     
     }
 }

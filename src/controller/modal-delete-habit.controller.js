@@ -1,15 +1,12 @@
 import DeleteHabit from "./api-delete-habit.controller.js"
+import VisualResponses from "./modal-responses.controller.js"
 
 export default class ModalDeleteHabit {
   static body = document.querySelector("body")
   static head = document.querySelector("head")
   
   static render(id) {
-    // renderiza na tela o aviso de que vai deletar o hábito
-    // Botão Sim, excluir o hábito deletar hábito na API -> DeleteHabit.delete()
-    // const btnErase = document.querySelector("modalContent__modalFormCreateHabit--deleteButton")
-    // btnErase.addEventListener("click", ()=>{
-
+    
       const link    = document.createElement("link")
       link.rel ="stylesheet"
       link.href = "../css/modal-delete-habit.css"
@@ -70,6 +67,9 @@ export default class ModalDeleteHabit {
       
       btnConfirm.addEventListener("click", ()=>{
            DeleteHabit.delete(id)
+           this.body.removeChild(containerMain)
+
+
           
       } )
 
