@@ -6,6 +6,7 @@ import ModalCreateHabit from "../controller/modal-create-habit.controller.js";
 import ModalDeleteHabit from "../controller/modal-delete-habit.controller.js";
 import GetAllRequest from "../controller/api-get-all.controller.js"
 import Filter from "../controller/filter-homepage.controller.js";
+import VisualResponses from "../controller/modal-responses.controller.js"
 
 ComponentsDom.header1();
 ComponentsDom.userInfo();
@@ -15,7 +16,6 @@ ModalUserMenu.render();
 ModalEditProfile.render()
 // ModalEditHabit.render();
 // ModalDeleteHabit.render();
-
 // Filter.allPages();
 
 

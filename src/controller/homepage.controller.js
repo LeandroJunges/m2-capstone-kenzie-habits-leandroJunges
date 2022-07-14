@@ -90,7 +90,6 @@ export default class ComponentsDom {
     let habits = []
     const ha = await GetAllRequest.getAll()
     habits.push(...ha)
-    console.log(ha)
     const cardHabits = document.querySelector('.main__data')
     const buttonMoreUpdate = document.querySelector('.button__loadMore')
     const buttonFinish = document.querySelector('.main__filterButtonFinish')

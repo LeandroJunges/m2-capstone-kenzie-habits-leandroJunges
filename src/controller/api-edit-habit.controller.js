@@ -1,3 +1,5 @@
+import VisualResponses from "./modal-responses.controller.js"
+
 export default class EditHabit {
   static baseUrl = "https://habits-kenzie.herokuapp.com/api/habits/";
   static token = JSON.parse(localStorage.getItem("@habits-kenzie:usr_token"));
@@ -20,6 +22,8 @@ export default class EditHabit {
     })
     .then(res => res.json())
     .then(res => {
+      console.log(res)
+      VisualResponses.success("update")
       window.location.reload(true)
       return res
     })
@@ -35,7 +39,9 @@ export default class EditHabit {
       }
     })
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then(res => {
+      VisualResponses.success("update")
+      console.log(res)})
     .catch(err => console.log(err))
   }
 }
