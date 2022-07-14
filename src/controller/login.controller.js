@@ -1,3 +1,4 @@
+import VisualResponses from '../controller/modal-responses.controller.js'
 export default class LoginRequest {
   static base_url = "https://habits-kenzie.herokuapp.com/api/userLogin";
 
@@ -14,8 +15,9 @@ export default class LoginRequest {
       .then((res) => {
         if (res.message) {
           console.log(res);
-          window.alert(res.message);
+          VisualResponses.failure();
           window.location.reload(true);
+
         } else {
 
           localStorage.setItem("@habits-kenzie:usr_name", JSON.stringify(res.response.usr_name));

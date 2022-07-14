@@ -79,23 +79,23 @@ export default class ModalEditHabit {
     insertButton.innerText = 'Inserir'
     deleteButton.innerText = 'Excluir'
     categoryOption.innerText = 'Selecionar categoria'
-    categoryOptionLazer.innerText = 'Lazer'
+    categoryOptionLazer.innerText = '🏖️ Lazer'
     if(habit.habit_category.toLowerCase() == 'lazer') {
       categoryOptionLazer.selected = 'selected';
     }
-    categoryOptionTrabalho.innerText = 'Trabalho'
+    categoryOptionTrabalho.innerText = '🔨 Trabalho'
     if(habit.habit_category.toLowerCase() == 'trabalho') {
       categoryOptionTrabalho.selected = 'selected';
     }
-    categoryOptionSaude.innerText = 'Saude'
+    categoryOptionSaude.innerText = '💜 Saude'
     if(habit.habit_category.toLowerCase() == 'saude') {
       categoryOptionSaude.selected = 'selected';
     }
-    categoryOptionCasa.innerText = 'Casa'
+    categoryOptionCasa.innerText = '🏠 Casa'
     if(habit.habit_category.toLowerCase() == 'casa') {
       categoryOptionCasa.selected = 'selected';
     }
-    categoryOptionEstudos.innerText = 'Estudos'
+    categoryOptionEstudos.innerText = '🖊️ Estudos'
     if(habit.habit_category.toLowerCase() == 'estudos') {
       categoryOptionEstudos.selected = 'selected';
     }
