@@ -44,6 +44,11 @@ export default class ComponentsDom {
     const userName = document.createElement('h2')
     const dropDown = document.querySelector('.dropDown')
     const logoutButton = document.querySelector('.dropDown__Logout')
+    const editButton = document.querySelector('.dropDown__editar')
+
+    editButton.addEventListener('click', async () => {
+      await ModalEditProfile.render()
+    })
 
     logoutButton.addEventListener('click', () => {
       localStorage.clear()
@@ -72,7 +77,7 @@ export default class ComponentsDom {
   }
 
 
-  static async main() {
+  static async main(el) {
     // busca os dados na API chamando GetAllRequest.getAll
     // renderiza os dados no corpo da página de acordo com o Figma
     // botão Criar deve ter escutador para abrir o Modal "Criar Hábito"
@@ -82,13 +87,24 @@ export default class ComponentsDom {
     // botão Carregar Mais deve renderizar os hábitos de todas as páginas da API
     // botão ... deve ter escutador para abrir o Modal "Editar Hábito"
     // checkbox deve alterar o hábito para concluído. Deve ter um escutador para chamar a classe UpdateHabit.update()
-    const habits = await GetAllRequest.getAll()
+    let habits = []
+    const ha = await GetAllRequest.getAll()
+    habits.push(...ha)
+    console.log(ha)
     const cardHabits = document.querySelector('.main__data')
     const buttonMoreUpdate = document.querySelector('.button__loadMore')
+    const buttonFinish = document.querySelector('.main__filterButtonFinish')
+    buttonFinish.addEventListener('click', () => {
+    const hab =  habits.filter(element => element.habit_status === true)
+    habits = []
+      habits.push(...hab)
+    })
+
+    
     const divLoadMore = document.querySelector('.div__loadMore')
     let counter = 7
 
-    habits.forEach((element, index) => {
+    el.forEach((element, index) => {
       if(index <= 7){
       const card = document.createElement('li')
       const check = document.createElement('div')
@@ -98,15 +114,11 @@ export default class ComponentsDom {
       const edit = document.createElement('img')
       const status = element.habit_status
       const id = element.habit_id
+      check.id = element.habit_id
 
-      check.addEventListener('click', (event) => {
-        if(check.className === 'main__dataCheck' && card.className === ''){
-          card.className = 'main__datali'
-        check.className = 'main__dataliCheck'
-        }else{
-          check.className = 'main__dataCheck'
-          card.className = ''
-      }
+      check.addEventListener('click', async(event) => {
+         await EditHabit.check(check.id)
+         location.reload()
       })
 
       if(status === true){
@@ -142,15 +154,17 @@ export default class ComponentsDom {
 
 
 
+
     buttonMoreUpdate.addEventListener('click', (event) =>{
-      console.log(habits)
       while(cardHabits.firstChild){
         cardHabits.removeChild(cardHabits.firstChild)
       }
 
+  
+
     cardHabits.innerHTML = "";  
 
-    habits.forEach((element, index) => {
+    el.forEach((element, index) => {
       const card = document.createElement('li')
       const check = document.createElement('div')
       const title = document.createElement('p')
@@ -198,6 +212,32 @@ export default class ComponentsDom {
     });
     })
 
+
   }
+
+  static async filters(){
+    let ha = await GetAllRequest.getAll()
+    const habit = ha.filter((habit) => {
+    return habit.habit_status === true;
+  });
+
+const btnAll = document.querySelector(".main__filterButtonAll")
+const btnFinish = document.querySelector('.main__filterButtonFinish');
+const card = document.querySelectorAll('li')
+const cardHabits = document.querySelector('.main__data')
+ComponentsDom.main(ha);
+btnAll.addEventListener('click', (event) => {   
+    cardHabits.innerHTML = ''
+    ComponentsDom.main(ha);
+})
+
+btnFinish.addEventListener('click', (event) => {
+    cardHabits.innerHTML = ''
+    ComponentsDom.main(habit);
+})
+
+
+  }
+
 }
 
