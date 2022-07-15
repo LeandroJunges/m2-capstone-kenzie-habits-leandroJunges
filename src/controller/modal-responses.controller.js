@@ -11,7 +11,7 @@ export default class VisualResponses {
         this.head.append(link)
         link.rel = 'stylesheet'
         link.href = '../css/modal-create-habit.css'
-        link.type = 'text.css' 
+        link.type = 'text/css' 
         
         const modalBackground = document.createElement('div')
         const divModalFailure = document.createElement('div')
