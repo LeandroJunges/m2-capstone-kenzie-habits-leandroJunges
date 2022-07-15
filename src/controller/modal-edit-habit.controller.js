@@ -20,7 +20,7 @@ export default class ModalEditHabit {
     this.head.append(link)
     link.rel = 'stylesheet'
     link.href = '../css/modal-edit-habit.css'
-    link.type = 'text.css' 
+    link.type = 'text/css' 
 
     const modalBackground = document.createElement('div')
     const divModalEditHabit = document.createElement('div')
